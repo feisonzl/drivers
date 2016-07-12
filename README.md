@@ -1,2 +1,2 @@
 # drivers
-kernel drivers
+study kernel drivers notes!
