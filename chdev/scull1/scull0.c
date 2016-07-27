@@ -6,6 +6,15 @@
 #include <linux/kernel.h>
 #include <asm/uaccess.h>
 #include <asm/div64.h>
+#include <linux/device.h>
+#include <linux/semaphore.h>
+#include <linux/math64.h>
+
+#define DEV_NAME "scull0"
+#define QUANTUM   4000
+#define QSET      1000
+
+
 static dev_t dev;
 int ret;
 typedef struct scull0_qset{
@@ -22,6 +31,9 @@ typedef struct sucll0{
 	struct semaphore sem;
 	struct cdev cdev;
 } t_scull0;
+
+t_scull0 scull0_dev;
+struct class *scull0_class;
 int scull0_trim(t_scull0 *scull0_dev)
 {
 	t_scull0_qset *next,*dptr;
@@ -47,10 +59,10 @@ int scull0_open(struct inode *inode,struct file *filp)
 {
 	t_scull0 *scull0_dev;
 	scull0_dev=container_of(inode->i_cdev,t_scull0,cdev);
-	filp->private_data=dev;
+	filp->private_data=scull0_dev;
 
 	if((filp->f_flags&O_ACCMODE)==O_WRONLY){
-		scull0_trim(scull0_dev);
+		//scull0_trim(scull0_dev);
 	}
 	return 0;
 }
@@ -64,14 +76,27 @@ t_scull0_qset *scull0_fllow(t_scull0 * scull0_dev,int page_rest)
 	t_scull0_qset *scull0_qset=NULL;
 	if(scull0_dev==NULL)
 		return NULL;
-	while(1){
-		scull0_qset=scull0_dev->data;
-		if(scull0_qset==NULL)
-			break;
-		if(page_rest==0)
-			break;
+	scull0_qset=scull0_dev->data;
+	printk("scull0:%x\n",scull0_qset);
+	if(scull0_qset==NULL){
+		scull0_qset=scull0_dev->data=kmalloc(sizeof(t_scull0_qset),GFP_KERNEL);
+		if(scull0_qset==NULL){
+			printk("kmalloc scull0_qset error!\n");
+			return NULL;
+		}
+		memset(scull0_qset,0,sizeof(t_scull0_qset));
+	}
+	printk("scull0:%x scull0_dev->data:%x\n",scull0_qset,scull0_dev->data);
+	while(tmpnum--){
 		scull0_qset=scull0_qset->next;
-		page_rest-=1;
+		if(scull0_qset==NULL)
+			scull0_qset=kmalloc(sizeof(t_scull0_qset),GFP_KERNEL);
+		if(scull0_qset==NULL){
+			printk("kmalloc scull0_qset error in while!\n");
+			return NULL;
+		}
+		memset(scull0_qset,0,sizeof(t_scull0_qset));
+		printk("scull0:%x scull0_dev->data:%x\n",scull0_qset,scull0_dev->data);
 	}
 	
 	return scull0_qset;
@@ -81,83 +106,148 @@ ssize_t scull0_read(struct file *filp,char __user *buff,size_t count,loff_t *off
 {
 	t_scull0 *scull0_dev=filp->private_data;
 	t_scull0_qset *scull0_qset;
-	int ret;
+
+	int ret=0;
 	long long off=*offp;
+	//printk("scull0_dev *offp:%d\n",*offp);
+	*offp=0;
 	int qset=scull0_dev->qset;
 	int quantum=scull0_dev->quantum;
 	int pagesize=qset*quantum;
-	int page_off=do_div(off,pagesize);
-	int page_rest=off;
-	int set_off=do_div(page_off,quantum);
-	int set_rest=page_off;
+	//printk("scull0_dev qset:%d quantum:%d\n",qset,quantum);
+	/*
+	int page_rest=do_div(*offp,pagesize);
+	int page_off=*offp;
+	int set_rest=do_div(page_rest,quantum);
+	printk("scull0_dev qset:%d quantum:%d page_rest:%d page_off:%d\n",qset,quantum,page_rest,page_off);
+	int set_off=page_rest;
+	printk("set_rest:%d\n",set_rest);
+	set_rest=(set_rest>=4000)?(set_rest-4000):set_rest;
+	printk("set_rest:%d\n",set_rest);
+	printk("scull0_read scull0_dev:%x count:%d size:%d *offp:%d quantum:%d set_rest:%d\n",\
+			scull0_dev,count,scull0_dev->size,*offp,quantum,set_rest);
+
+	*/
+	int page_off,page_rest,set_off,set_rest;
+	page_off=div_u64_rem(*offp,pagesize,&page_rest);
+	set_off=div_u64_rem(page_rest,quantum,&set_rest);
+	
+	if(down_interruptible(&scull0_dev->sem))
+		return -ERESTARTSYS;
+#if 1
+
 	if(*offp >scull0_dev->size)
 		goto out;
 	if(*offp+count >scull0_dev->size)
 		count=scull0_dev->size-*offp;
-	scull0_qset=scull0_fllow(scull0_dev,page_rest);//未实现该函数
-	if(scull0_qset==NULL||!scull0_qset->data||scull0_qset->data[set_rest])
-		goto out;
-	if(count>quantum-set_off)
-		count=quantum-set_off;
 	
-	if(copy_to_user(buff,scull0_qset->data[set_rest]+set_off,count)){
+
+	scull0_qset=scull0_fllow(scull0_dev,page_off);//未实现该函数
+	if(scull0_qset==NULL||!scull0_qset->data||!scull0_qset->data[set_off]){
+		printk("scull0_qset==NULL||!scull0_qset->data||!scull0_qset->data[set_rest]\n");
+		goto out;
+	}
+	//printk("set_rest:%d\n",set_rest);
+#if 1
+
+	if(count>scull0_dev->quantum-set_rest)
+		count=scull0_dev->quantum-set_rest;
+	
+	if(copy_to_user(buff,scull0_qset->data[set_off]+set_rest,count)){
 		ret=-EFAULT;
 		goto out;
 	}
-	offp+=count;
-	return count;
+	*offp+=count;
+	ret=count;
+	printk("count:%d ret:%d set_rest:%d set_off:%d page_rest:%d size:%d\n",\
+		count,ret,set_rest,set_off,page_rest,scull0_dev->size);
+#endif 
+#endif
+	//copy_to_user(buff,scull0_qset->data[0],count);
 out:
 	up(&scull0_dev->sem);
-	return 0;
+	return ret;
 	
 }
-ssize_t scull0_write(struct file *filp,char __user *buff,size_t count,loff_t *offp)
+ssize_t scull0_write(struct file *filp,const char __user *buff,size_t count,loff_t *offp)
 {
 	t_scull0 *scull0_dev=filp->private_data;
 	t_scull0_qset *scull0_qset;
-	int ret;
+	int ret= -ENOMEM;
 	long long off=*offp;
 	int qset=scull0_dev->qset;
 	int quantum=scull0_dev->quantum;
 	int pagesize=qset*quantum;
-	int page_off=do_div(off,pagesize);
-	int page_rest=off;
-	int set_off=do_div(page_off,quantum);
-	int set_rest=page_off;
-	if(*offp >scull0_dev->size)
+	int page_rest=do_div(off,pagesize);
+	int page_off=off;
+	int set_rest=do_div(page_rest,quantum);
+	int set_off=page_rest;
+	char buf[100]={0};
+	if(down_interruptible(&scull0_dev->sem))
+		return -ERESTARTSYS;
+	printk("scull0_write scull0_dev:%x\n",scull0_dev);
+#if 1
+	scull0_qset=scull0_fllow(scull0_dev,page_off);//未实现该函数
+	if(scull0_qset==NULL){
+		printk("scull0_qset is NULL!\n");
 		goto out;
-	if(*offp+count >scull0_dev->size)
-		count=scull0_dev->size-*offp;
-	scull0_qset=scull0_fllow(scull0_dev,page_rest);//未实现该函数
-	if(scull0_qset==NULL)
-		goto out;
+	}
 	if(!scull0_qset->data){
 		scull0_qset->data=kmalloc(qset*sizeof(char *),GFP_KERNEL);
-		if(!scull0_qset->data)
+		if(!scull0_qset->data){
+			printk("scull0_qset->data is NULL!\n");
 			goto out;
+		}
 		memset(scull0_qset->data,0,qset*sizeof(char *));
-	}	
+	}
 	if(!scull0_qset->data[set_off]){
 		scull0_qset->data[set_off]=kmalloc(quantum,GFP_KERNEL);
-		if(!scull0_qset->data[set_off])
+		if(!scull0_qset->data[set_off]){
+			printk("scull0_qset->data[set_off] is NULL!\n");
 			goto out;
+		}
 		memset(scull0_qset->data[set_off],0,quantum);
-	}	
-	
+	}
+	printk("count:%d quantum:%d set_off:%d set_rest:%d\n",count,quantum,set_off,set_rest);
 	if(count>quantum-set_off)
 		count=quantum-set_off;
-	
-	if(copy_from_user(scull0_qset->data[set_rest]+set_off,buff,count)){
+
+	copy_from_user(buf,buff,count);
+	//printk("copy_from_user(buf,buff,count):%d\n",ret);
+	if(copy_from_user(scull0_qset->data[set_off]+set_rest,buff,count)){
 		ret=-EFAULT;
 		goto out;
 	}
-	offp+=count;
+	printk("%s\n",(char *)(scull0_qset->data[set_rest]+set_off));
+	/*
+	int i;
+	char *tmpbuf=scull0_qset->data[set_off]+set_rest;
+	for(i=0;i<count;i++){
+		printk("%c\n",*(char *)(scull0_qset->data[set_rest]+set_off+i));
+		*(tmpbuf+i)='c';
+		printk("tmpbuf:%c\n",*(tmpbuf+i));
+	}
+	memcpy((char*)(scull0_qset->data[set_off]+set_rest),buf,count);
+	for(i=0;i<count;i++){
+		printk("%x\n",*(char *)(scull0_qset->data[set_rest]+set_off+i));
+		printk("%s\n",(char *)(scull0_qset->data[set_rest]+set_off));
+		//*(tmpbuf+i)='c';
+		//printk("tmpbuf:%c\n",*(tmpbuf+i));
+	}
+	printk("\n");
+	printk("buf:%s\n",buf);
+	*/
+	*offp+=count;
 	if(scull0_dev->size<*offp)
 		scull0_dev->size=*offp;
-	return count;
+	ret=count;
+	printk("count:%d ret:%d set_rest:%d set_off:%d page_rest:%d size:%d scull0_dev->data:%x\n",\
+		count,ret,set_rest,set_off,page_rest,scull0_dev->size,scull0_dev->data);
+#endif
+	
 out:
 	up(&scull0_dev->sem);
-	return 0;
+	return ret;
 	
 }
 struct file_operations scull0_fops={
@@ -169,9 +259,12 @@ struct file_operations scull0_fops={
 };
 int scull0_init(void)
 {	
-	t_scull0 scull0_dev;
+	//t_scull0 scull0_dev;
 	//dev=MKDEV("scull0",0);
 	//register_chrdev_region(dev,1,"scull0");
+	sema_init(&scull0_dev.sem,1);
+	//DECLARE_MUTEX(scull0_dev.sem);
+	//DEFINE_SEMAPHORE(&scull0_dev->sem);
 	ret=alloc_chrdev_region(&dev,0,1,"scull0");
 	if(ret!=0){
 		printk("alloc_chrdev_region error!\n");
@@ -180,11 +273,20 @@ int scull0_init(void)
 	cdev_init(&scull0_dev.cdev,&scull0_fops);
 	scull0_dev.cdev.owner=THIS_MODULE;
 	scull0_dev.cdev.ops=&scull0_fops;
+	scull0_dev.quantum=QUANTUM;
+	scull0_dev.qset=QSET;
+	scull0_dev.size=0;
 	ret=cdev_add(&scull0_dev.cdev,dev,1);
 	if(ret!=0){
 		printk("cdev_add error!\n");
 		goto cdev_delete;
 	}
+	scull0_class = class_create(THIS_MODULE,DEV_NAME);
+	if(IS_ERR(scull0_class)){
+		printk("class create error!\n");
+		return -1;
+	}
+	device_create(scull0_class,NULL, dev,NULL,DEV_NAME);
 	printk(KERN_ERR "scull0_init\n");
 	
 	return 0;
@@ -197,7 +299,10 @@ unregister_dev:
 }
 void scull0_exit(void)
 {
+	device_destroy(scull0_class, dev); 
+	class_destroy(scull0_class);
 	unregister_chrdev_region(MINOR(dev),1);
+	cdev_del(&scull0_dev.cdev);
 	printk(KERN_ERR "scull0_exit\n");
 	return;
 }
