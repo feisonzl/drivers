@@ -1,6 +1,6 @@
 KVERS =$(shell uname -r)
 PWD = $(shell pwd)
-obj-m +=scull1.o
+obj-m +=scullp.o
 build:
 	make -C /lib/modules/$(KVERS)/build M=$(PWD) modules -lgcc -lm
 clean:	

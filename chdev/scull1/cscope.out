@@ -1,0 +1,1574 @@
+cscope 15 /home/feison/work/study/drivers/chdev/scull1               0000007927
+	@main.c
+
+1 
+	~<¡dio.h
+>
+
+2 
+	~<sys/ty³s.h
+>
+
+3 
+	~<sys/¡©.h
+>
+
+4 
+	~<fú.h
+>
+
+5 
+	~<uni¡d.h
+>
+
+6 
+	$maš
+()
+
+8 
+fd
+,
+»t
+;
+
+9 
+buf
+[100]={0};
+
+10 
+fd
+ = 
+	`İ’
+("/dev/scuÎ0",
+O_RDWR
+);
+
+11 
+»t
+=
+	`wr™e
+(
+fd
+, "scull0 writeest\n",("scull0 writeest\n"));
+
+12 
+	`´štf
+("wr™%d ch¬!\n",
+»t
+);
+
+13 
+»t
+=
+	`»ad
+(
+fd
+,
+buf
+,10);
+
+14 
+	`´štf
+("»ade¡:% »t:%d\n",
+buf
+,
+»t
+);
+
+16 
+	}
+}
+
+	@scull1.c
+
+2 
+	~<lšux/š™.h
+>
+
+3 
+	~<lšux/moduË.h
+>
+
+4 
+	~<lšux/cdev.h
+>
+
+5 
+	~<lšux/fs.h
+>
+
+6 
+	~<lšux/k”Ãl.h
+>
+
+7 
+	~<asm/uacûss.h
+>
+
+8 
+	~<asm/div64.h
+>
+
+9 
+	~<lšux/deviû.h
+>
+
+10 
+	~<lšux/£m­hÜe.h
+>
+
+11 
+	~<lšux/m©h64.h
+>
+
+12 
+	~"scuÎ1.h
+"
+
+15 
+dev_t
+ 
+	gdev
+;
+
+16 
+	g»t
+;
+
+18 
+t_scuÎ1
+ 
+	gscuÎ0_dev
+;
+
+19 
+şass
+ *
+	gscuÎ1_şass
+;
+
+20 
+	$scuÎ1_Œim
+(
+t_scuÎ0
+ *
+scuÎ0_dev
+)
+
+22 
+t_scuÎ1_q£t
+ *
+Ãxt
+,*
+d±r
+;
+
+23 
+q£t
+,
+quªtum
+;
+
+24 
+q£t
+=
+scuÎ1_dev
+->qset;
+
+25 
+quªtum
+=
+scuÎ1_dev
+->quantum;
+
+26 
+i
+;
+
+27 
+d±r
+=
+scuÎ1_dev
+->
+d©a
+;d±r;d±r=
+Ãxt
+){
+
+28 if(
+d±r
+->
+d©a
+){
+
+29 
+i
+=0;i<
+q£t
+;i++)
+
+30 
+	`kä“
+(
+d±r
+->
+d©a
+[
+i
+]);
+
+32 
+Ãxt
+=
+d±r
+->next;
+
+33 
+	`kä“
+(
+d±r
+->
+d©a
+);
+
+35 
+scuÎ1_dev
+->
+d©a
+=
+NULL
+;
+
+36 
+scuÎ1_dev
+->
+quªtum
+=quantum;
+
+37 
+scuÎ1_dev
+->
+q£t
+=qset;
+
+38 
+scuÎ1_dev
+->
+size
+=0;
+
+40 
+	}
+}
+
+41 
+	$scuÎ1_İ’
+(
+šode
+ *šode,
+fe
+ *
+fp
+)
+
+43 
+t_scuÎ1
+ *
+scuÎ0_dev
+;
+
+44 
+scuÎ1_dev
+=
+	`cÚš”_of
+(
+šode
+->
+i_cdev
+,
+t_scuÎ0
+,
+cdev
+);
+
+45 
+fp
+->
+´iv©e_d©a
+=
+scuÎ1_dev
+;
+
+47 if((
+fp
+->
+f_æags
+&
+O_ACCMODE
+)==
+O_WRONLY
+){
+
+51 
+	}
+}
+
+52 
+	$scuÎ1_»Ëa£
+(
+šode
+ *šode,
+fe
+ *
+fp
+)
+
+55 
+	}
+}
+
+56 
+t_scuÎ1_q£t
+ *
+	$scuÎ0_ælow
+(
+t_scuÎ0
+ * 
+scuÎ0_dev
+,
+·ge_»¡
+)
+
+58 
+tm²um
+=
+·ge_»¡
+;
+
+59 
+t_scuÎ1_q£t
+ *
+scuÎ0_q£t
+=
+NULL
+;
+
+60 if(
+scuÎ1_dev
+==
+NULL
+)
+
+61  
+NULL
+;
+
+62 
+scuÎ1_q£t
+=
+scuÎ0_dev
+->
+d©a
+;
+
+63 
+	`´štk
+("scuÎ1:%x\n",
+scuÎ0_q£t
+);
+
+64 if(
+scuÎ1_q£t
+==
+NULL
+){
+
+65 
+scuÎ1_q£t
+=
+scuÎ0_dev
+->
+d©a
+=
+	`km®loc
+((
+t_scuÎ0_q£t
+),
+GFP_KERNEL
+);
+
+66 if(
+scuÎ1_q£t
+==
+NULL
+){
+
+67 
+	`´štk
+("kmalloc scull1_qsetƒrror!\n");
+
+68  
+NULL
+;
+
+70 
+	`mem£t
+(
+scuÎ1_q£t
+,0,(
+t_scuÎ0_q£t
+));
+
+72 
+	`´štk
+("scuÎ1:%x scuÎ0_dev->d©a:%x\n",
+scuÎ0_q£t
+,
+scuÎ0_dev
+->
+d©a
+);
+
+73 
+tm²um
+--){
+
+74 
+scuÎ1_q£t
+=
+scuÎ0_q£t
+->
+Ãxt
+;
+
+75 if(
+scuÎ1_q£t
+==
+NULL
+)
+
+76 
+scuÎ1_q£t
+=
+	`km®loc
+((
+t_scuÎ0_q£t
+),
+GFP_KERNEL
+);
+
+77 if(
+scuÎ1_q£t
+==
+NULL
+){
+
+78 
+	`´štk
+("kmalloc scull1_qsetƒrror in while!\n");
+
+79  
+NULL
+;
+
+81 
+	`mem£t
+(
+scuÎ1_q£t
+,0,(
+t_scuÎ0_q£t
+));
+
+82 
+	`´štk
+("scuÎ1:%x scuÎ0_dev->d©a:%x\n",
+scuÎ0_q£t
+,
+scuÎ0_dev
+->
+d©a
+);
+
+85  
+scuÎ1_q£t
+;
+
+87 
+	}
+}
+
+88 
+ssize_t
+ 
+	$scuÎ1_»ad
+(
+fe
+ *
+fp
+,
+__u£r
+ *
+buff
+,
+size_t
+ 
+couÁ
+,
+loff_t
+ *
+ofå
+)
+
+90 
+t_scuÎ1
+ *
+scuÎ0_dev
+=
+fp
+->
+´iv©e_d©a
+;
+
+91 
+t_scuÎ1_q£t
+ *
+scuÎ0_q£t
+;
+
+93 
+»t
+=0;
+
+94 
+off
+=*
+ofå
+;
+
+96 *
+ofå
+=0;
+
+97 
+q£t
+=
+scuÎ1_dev
+->qset;
+
+98 
+quªtum
+=
+scuÎ1_dev
+->quantum;
+
+99 
+·gesize
+=
+q£t
+*
+quªtum
+;
+
+114 
+·ge_off
+,
+·ge_»¡
+,
+£t_off
+,
+£t_»¡
+;
+
+115 
+·ge_off
+=
+	`div_u64_»m
+(*
+ofå
+,
+·gesize
+,&
+·ge_»¡
+);
+
+116 
+£t_off
+=
+	`div_u64_»m
+(
+·ge_»¡
+,
+quªtum
+,&
+£t_»¡
+);
+
+118 if(
+	`down_š‹¼u±ibË
+(&
+scuÎ1_dev
+->
+£m
+))
+
+119  -
+ERESTARTSYS
+;
+
+122 if(*
+ofå
+ >
+scuÎ1_dev
+->
+size
+)
+
+123 
+out
+;
+
+124 if(*
+ofå
++
+couÁ
+ >
+scuÎ1_dev
+->
+size
+)
+
+125 
+couÁ
+=
+scuÎ1_dev
+->
+size
+-*
+ofå
+;
+
+128 
+scuÎ1_q£t
+=
+	`scuÎ0_ælow
+(
+scuÎ0_dev
+,
+·ge_off
+);
+
+129 if(
+scuÎ1_q£t
+==
+NULL
+||!
+scuÎ0_q£t
+->
+d©a
+||!scuÎ0_q£t->d©a[
+£t_off
+]){
+
+130 
+	`´štk
+("scull1_qset==NULL||!scull0_qset->data||!scull0_qset->data[set_rest]\n");
+
+131 
+out
+;
+
+136 if(
+couÁ
+>
+scuÎ1_dev
+->
+quªtum
+-
+£t_»¡
+)
+
+137 
+couÁ
+=
+scuÎ1_dev
+->
+quªtum
+-
+£t_»¡
+;
+
+139 if(
+	`cİy_to_u£r
+(
+buff
+,
+scuÎ1_q£t
+->
+d©a
+[
+£t_off
+]+
+£t_»¡
+,
+couÁ
+)){
+
+140 
+»t
+=-
+EFAULT
+;
+
+141 
+out
+;
+
+143 *
+ofå
++=
+couÁ
+;
+
+144 
+»t
+=
+couÁ
+;
+
+145 
+	`´štk
+("count:%d„et:%d set_rest:%d set_off:%d…age_rest:%d size:%d\n",\
+
+146 
+couÁ
+,
+»t
+,
+£t_»¡
+,
+£t_off
+,
+·ge_»¡
+,
+scuÎ1_dev
+->
+size
+);
+
+150 
+out
+:
+
+151 
+	`up
+(&
+scuÎ1_dev
+->
+£m
+);
+
+152  
+»t
+;
+
+154 
+	}
+}
+
+155 
+ssize_t
+ 
+	$scuÎ1_wr™e
+(
+fe
+ *
+fp
+,cÚ¡ 
+__u£r
+ *
+buff
+,
+size_t
+ 
+couÁ
+,
+loff_t
+ *
+ofå
+)
+
+157 
+t_scuÎ1
+ *
+scuÎ0_dev
+=
+fp
+->
+´iv©e_d©a
+;
+
+158 
+t_scuÎ1_q£t
+ *
+scuÎ0_q£t
+;
+
+159 
+»t
+ğ-
+ENOMEM
+;
+
+160 
+off
+=*
+ofå
+;
+
+161 
+q£t
+=
+scuÎ1_dev
+->qset;
+
+162 
+quªtum
+=
+scuÎ1_dev
+->quantum;
+
+163 
+·gesize
+=
+q£t
+*
+quªtum
+;
+
+164 
+·ge_»¡
+=
+	`do_div
+(
+off
+,
+·gesize
+);
+
+165 
+·ge_off
+=
+off
+;
+
+166 
+£t_»¡
+=
+	`do_div
+(
+·ge_»¡
+,
+quªtum
+);
+
+167 
+£t_off
+=
+·ge_»¡
+;
+
+168 
+buf
+[100]={0};
+
+169 if(
+	`down_š‹¼u±ibË
+(&
+scuÎ1_dev
+->
+£m
+))
+
+170  -
+ERESTARTSYS
+;
+
+171 
+	`´štk
+("scuÎ1_wr™scuÎ0_dev:%x\n",
+scuÎ0_dev
+);
+
+173 
+scuÎ1_q£t
+=
+	`scuÎ0_ælow
+(
+scuÎ0_dev
+,
+·ge_off
+);
+
+174 if(
+scuÎ1_q£t
+==
+NULL
+){
+
+175 
+	`´štk
+("scull1_qset is NULL!\n");
+
+176 
+out
+;
+
+178 if(!
+scuÎ1_q£t
+->
+d©a
+){
+
+179 
+scuÎ1_q£t
+->
+d©a
+=
+	`km®loc
+(
+q£t
+*(*),
+GFP_KERNEL
+);
+
+180 if(!
+scuÎ1_q£t
+->
+d©a
+){
+
+181 
+	`´štk
+("scull1_qset->data is NULL!\n");
+
+182 
+out
+;
+
+184 
+	`mem£t
+(
+scuÎ1_q£t
+->
+d©a
+,0,
+q£t
+*(*));
+
+186 if(!
+scuÎ1_q£t
+->
+d©a
+[
+£t_off
+]){
+
+187 
+scuÎ1_q£t
+->
+d©a
+[
+£t_off
+]=
+	`km®loc
+(
+quªtum
+,
+GFP_KERNEL
+);
+
+188 if(!
+scuÎ1_q£t
+->
+d©a
+[
+£t_off
+]){
+
+189 
+	`´štk
+("scull1_qset->data[set_off] is NULL!\n");
+
+190 
+out
+;
+
+192 
+	`mem£t
+(
+scuÎ1_q£t
+->
+d©a
+[
+£t_off
+],0,
+quªtum
+);
+
+194 
+	`´štk
+("couÁ:%d quªtum:%d s‘_off:%d s‘_»¡:%d\n",
+couÁ
+,
+quªtum
+,
+£t_off
+,
+£t_»¡
+);
+
+195 if(
+couÁ
+>
+quªtum
+-
+£t_off
+)
+
+196 
+couÁ
+=
+quªtum
+-
+£t_off
+;
+
+198 
+	`cİy_äom_u£r
+(
+buf
+,
+buff
+,
+couÁ
+);
+
+200 if(
+	`cİy_äom_u£r
+(
+scuÎ1_q£t
+->
+d©a
+[
+£t_off
+]+
+£t_»¡
+,
+buff
+,
+couÁ
+)){
+
+201 
+»t
+=-
+EFAULT
+;
+
+202 
+out
+;
+
+204 
+	`´štk
+("%s\n",(*)(
+scuÎ1_q£t
+->
+d©a
+[
+£t_»¡
+]+
+£t_off
+));
+
+223 *
+ofå
++=
+couÁ
+;
+
+224 if(
+scuÎ1_dev
+->
+size
+<*
+ofå
+)
+
+225 
+scuÎ1_dev
+->
+size
+=*
+ofå
+;
+
+226 
+»t
+=
+couÁ
+;
+
+227 
+	`´štk
+("count:%d„et:%d set_rest:%d set_off:%d…age_rest:%d size:%d scull1_dev->data:%x\n",\
+
+228 
+couÁ
+,
+»t
+,
+£t_»¡
+,
+£t_off
+,
+·ge_»¡
+,
+scuÎ1_dev
+->
+size
+,
+scuÎ0_dev
+->
+d©a
+);
+
+231 
+out
+:
+
+232 
+	`up
+(&
+scuÎ1_dev
+->
+£m
+);
+
+233  
+»t
+;
+
+235 
+	}
+}
+
+237 
+	$scuÎ1_ioùl
+(
+šode
+ *šode, 
+fe
+ *
+fp
+,
+cmd
+, 
+¬g
+)
+
+240 
+	}
+}
+
+242 
+fe_İ”©iÚs
+ 
+	gscuÎ1_fİs
+={
+
+243 .
+owÃr
+=
+THIS_MODULE
+,
+
+244 .
+	gİ’
+=
+scuÎ1_İ’
+,
+
+245 .
+	g»Ëa£
+=
+scuÎ1_»Ëa£
+,
+
+246 .
+	g»ad
+=
+scuÎ1_»ad
+,
+
+247 .
+	gwr™e
+=
+scuÎ1_wr™e
+,
+
+248 .
+	gioùl
+=
+scuÎ1_ioùl
+,
+
+250 
+	$scuÎ1_š™
+()
+
+255 
+	`£ma_š™
+(&
+scuÎ1_dev
+.
+£m
+,1);
+
+258 
+»t
+=
+	`®loc_chrdev_»giÚ
+(&
+dev
+,0,1,"scull1");
+
+259 if(
+»t
+!=0){
+
+260 
+	`´štk
+("alloc_chrdev_regionƒrror!\n");
+
+261 
+uÄegi¡”_dev
+;
+
+263 
+	`cdev_š™
+(&
+scuÎ1_dev
+.
+cdev
+,&
+scuÎ0_fİs
+);
+
+264 
+scuÎ1_dev
+.
+cdev
+.
+owÃr
+=
+THIS_MODULE
+;
+
+265 
+scuÎ1_dev
+.
+cdev
+.
+İs
+=&
+scuÎ0_fİs
+;
+
+266 
+scuÎ1_dev
+.
+quªtum
+=
+QUANTUM
+;
+
+267 
+scuÎ1_dev
+.
+q£t
+=
+QSET
+;
+
+268 
+scuÎ1_dev
+.
+size
+=0;
+
+269 
+»t
+=
+	`cdev_add
+(&
+scuÎ1_dev
+.
+cdev
+,
+dev
+,1);
+
+270 if(
+»t
+!=0){
+
+271 
+	`´štk
+("cdev_addƒrror!\n");
+
+272 
+cdev_d–‘e
+;
+
+274 
+scuÎ1_şass
+ = 
+	`şass_ü—‹
+(
+THIS_MODULE
+,
+DEV_NAME
+);
+
+275 if(
+	`IS_ERR
+(
+scuÎ1_şass
+)){
+
+276 
+	`´štk
+("class createƒrror!\n");
+
+279 
+	`deviû_ü—‹
+(
+scuÎ1_şass
+,
+NULL
+, 
+dev
+,NULL,
+DEV_NAME
+);
+
+280 
+	`´štk
+(
+KERN_ERR
+ "scull1_init\n");
+
+283 
+cdev_d–‘e
+:
+
+284 
+	`cdev_d–
+(&
+scuÎ1_dev
+.
+cdev
+);
+
+285 
+uÄegi¡”_dev
+:
+
+286 
+	`uÄegi¡”_chrdev_»giÚ
+(
+	`MINOR
+(
+dev
+),1);
+
+289 
+	}
+}
+
+290 
+	$scuÎ1_ex™
+()
+
+292 
+	`deviû_de¡roy
+(
+scuÎ1_şass
+, 
+dev
+);
+
+293 
+	`şass_de¡roy
+(
+scuÎ1_şass
+);
+
+294 
+	`uÄegi¡”_chrdev_»giÚ
+(
+	`MINOR
+(
+dev
+),1);
+
+295 
+	`cdev_d–
+(&
+scuÎ1_dev
+.
+cdev
+);
+
+296 
+	`´štk
+(
+KERN_ERR
+ "scull1_exit\n");
+
+298 
+	}
+}
+
+299 
+moduË_š™
+(
+scuÎ1_š™
+);
+
+300 
+moduË_ex™
+(
+scuÎ1_ex™
+);
+
+301 
+MODULE_LICENSE
+ ("Dual BSD/GPL");
+
+	@scull1.h
+
+1 #iâdeà
+_SCULL1_H_
+
+
+2 
+	#_SCULL1_H_
+
+
+	)
+
+4 
+	#DEV_NAME
+ "scuÎ1"
+
+	)
+
+5 
+	#QUANTUM
+ 4000
+
+	)
+
+6 
+	#QSET
+ 1000
+
+	)
+
+8 
+	#SCULL1_MAGIC
+ 's'
+
+	)
+
+9 
+	#SCULL1_
+
+
+	)
+
+11 
+	sscuÎ1_q£t
+{
+
+12 **
+	md©a
+;
+
+13 
+suşl0_q£t
+ *
+	mÃxt
+;
+
+14 } 
+	tt_scuÎ1_q£t
+;
+
+15 
+	ssuşl0
+{
+
+16 *
+	mpd©a
+;
+
+17 
+t_scuÎ1_q£t
+ *
+	md©a
+;
+
+18 
+	mquªtum
+;
+
+19 
+	mq£t
+;
+
+20 
+	msize
+;
+
+21 
+	macûss_key
+;
+
+22 
+£m­hÜe
+ 
+	m£m
+;
+
+23 
+cdev
+ 
+	mcdev
+;
+
+24 } 
+	tt_scuÎ1
+;
+
+	@
+1
+.
+0
+3
+25
+main.c
+scull1.c
+scull1.h

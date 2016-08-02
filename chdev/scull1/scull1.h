@@ -1,9 +1,5 @@
-#include <stdio.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <linux/ioctl.h>
+#ifndef _SCULL1_H_
+#define _SCULL1_H_
 
 #define DEV_NAME "scull1"
 #define QUANTUM   4000
@@ -44,25 +40,19 @@
 
 #define SCULL1_IOC_MAXNR 14
 
-
-
-int main()
-{
-	int fd,ret;
-	char buf[100]={0};
-	fd = open("/dev/scull1",O_RDWR);			
-    ret=write(fd, "scull1 write test\n",sizeof("scull1 write test\n"));
-	printf("write %d char!\n",ret);
-	ret=read(fd,buf,10);
-	printf("read test:%s ret:%d\n",buf,ret);
+typedef struct scull1_qset{
+	void **data;
+	struct scull1_qset *next;
+} t_scull1_qset;
+typedef struct scull1{
+	void *pdata;
+	t_scull1_qset *data;
 	int quantum;
-	ioctl(fd,SCULL1_IOCSQUANTUM,&quantum);
-	ioctl(fd,SCULL1_IOCTQUANTUM,quantum);
+	int qset;
+	unsigned long size;
+	unsigned int access_key;
+	struct semaphore sem;
+	struct cdev cdev;
+} t_scull1;
 
-	ioctl(fd,SCULL1_IOCGQUANTUM,&quantum);
-	quantum=ioctl(fd,SCULL1_IOCQQUANTUM);
-
-	ioctl(fd,SCULL1_IOCXQUANTUM,&quantum);
-	quantum=ioctl(fd,SCULL1_IOCHQUANTUM,quantum);
-	return 0;
-}
+#endif /*_SCULL1_H_*/

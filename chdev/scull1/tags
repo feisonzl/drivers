@@ -1,0 +1,90 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+DEV_NAME	main.c	7;"	d	language:C	file:
+DEV_NAME	scull1.h	4;"	d	language:C++
+KVERS	Makefile	/^KVERS =$(shell uname -r)$/;"	m	language:Make
+PWD	Makefile	/^PWD = $(shell pwd)$/;"	m	language:Make
+QSET	main.c	9;"	d	language:C	file:
+QSET	scull1.h	6;"	d	language:C++
+QUANTUM	main.c	8;"	d	language:C	file:
+QUANTUM	scull1.h	5;"	d	language:C++
+SCULL1_IOCGQSET	main.c	27;"	d	language:C	file:
+SCULL1_IOCGQSET	scull1.h	24;"	d	language:C++
+SCULL1_IOCGQUANTUM	main.c	26;"	d	language:C	file:
+SCULL1_IOCGQUANTUM	scull1.h	23;"	d	language:C++
+SCULL1_IOCHQSET	main.c	33;"	d	language:C	file:
+SCULL1_IOCHQSET	scull1.h	30;"	d	language:C++
+SCULL1_IOCHQUANTUM	main.c	32;"	d	language:C	file:
+SCULL1_IOCHQUANTUM	scull1.h	29;"	d	language:C++
+SCULL1_IOCQQSET	main.c	29;"	d	language:C	file:
+SCULL1_IOCQQSET	scull1.h	26;"	d	language:C++
+SCULL1_IOCQQUANTUM	main.c	28;"	d	language:C	file:
+SCULL1_IOCQQUANTUM	scull1.h	25;"	d	language:C++
+SCULL1_IOCRESET	main.c	12;"	d	language:C	file:
+SCULL1_IOCRESET	scull1.h	9;"	d	language:C++
+SCULL1_IOCSQSET	main.c	23;"	d	language:C	file:
+SCULL1_IOCSQSET	scull1.h	20;"	d	language:C++
+SCULL1_IOCSQUANTUM	main.c	22;"	d	language:C	file:
+SCULL1_IOCSQUANTUM	scull1.h	19;"	d	language:C++
+SCULL1_IOCTQSET	main.c	25;"	d	language:C	file:
+SCULL1_IOCTQSET	scull1.h	22;"	d	language:C++
+SCULL1_IOCTQUANTUM	main.c	24;"	d	language:C	file:
+SCULL1_IOCTQUANTUM	scull1.h	21;"	d	language:C++
+SCULL1_IOCXQSET	main.c	31;"	d	language:C	file:
+SCULL1_IOCXQSET	scull1.h	28;"	d	language:C++
+SCULL1_IOCXQUANTUM	main.c	30;"	d	language:C	file:
+SCULL1_IOCXQUANTUM	scull1.h	27;"	d	language:C++
+SCULL1_IOC_MAXNR	main.c	44;"	d	language:C	file:
+SCULL1_IOC_MAXNR	scull1.h	41;"	d	language:C++
+SCULL1_MAGIC	main.c	11;"	d	language:C	file:
+SCULL1_MAGIC	scull1.h	8;"	d	language:C++
+SCULL1_P_IOCQSIZE	main.c	41;"	d	language:C	file:
+SCULL1_P_IOCQSIZE	scull1.h	38;"	d	language:C++
+SCULL1_P_IOCTSIZE	main.c	40;"	d	language:C	file:
+SCULL1_P_IOCTSIZE	scull1.h	37;"	d	language:C++
+_SCULL1_H_	scull1.h	2;"	d	language:C++
+access_key	scull1.h	/^	unsigned int access_key;$/;"	m	language:C++	struct:scull1	access:public
+cdev	scull1.h	/^	struct cdev cdev;$/;"	m	language:C++	struct:scull1	typeref:struct:scull1::cdev	access:public
+data	scull1.h	/^	t_scull1_qset *data;$/;"	m	language:C++	struct:scull1	access:public
+data	scull1.h	/^	void **data;$/;"	m	language:C++	struct:scull1_qset	access:public
+dev	scull1.c	/^static dev_t dev;$/;"	v	language:C	file:
+main	main.c	/^int main()$/;"	f	language:C
+next	scull1.h	/^	struct scull1_qset *next;$/;"	m	language:C++	struct:scull1_qset	typeref:struct:scull1_qset::scull1_qset	access:public
+pdata	scull1.h	/^	void *pdata;$/;"	m	language:C++	struct:scull1	access:public
+qset	scull1.h	/^	int qset;$/;"	m	language:C++	struct:scull1	access:public
+quantum	scull1.h	/^	int quantum;$/;"	m	language:C++	struct:scull1	access:public
+ret	scull1.c	/^int ret;$/;"	v	language:C
+scull1	scull1.h	/^typedef struct scull1{$/;"	s	language:C++
+scull1::access_key	scull1.h	/^	unsigned int access_key;$/;"	m	language:C++	struct:scull1	access:public
+scull1::cdev	scull1.h	/^	struct cdev cdev;$/;"	m	language:C++	struct:scull1	typeref:struct:scull1::cdev	access:public
+scull1::data	scull1.h	/^	t_scull1_qset *data;$/;"	m	language:C++	struct:scull1	access:public
+scull1::pdata	scull1.h	/^	void *pdata;$/;"	m	language:C++	struct:scull1	access:public
+scull1::qset	scull1.h	/^	int qset;$/;"	m	language:C++	struct:scull1	access:public
+scull1::quantum	scull1.h	/^	int quantum;$/;"	m	language:C++	struct:scull1	access:public
+scull1::sem	scull1.h	/^	struct semaphore sem;$/;"	m	language:C++	struct:scull1	typeref:struct:scull1::semaphore	access:public
+scull1::size	scull1.h	/^	unsigned long size;$/;"	m	language:C++	struct:scull1	access:public
+scull1_class	scull1.c	/^struct class *scull1_class;$/;"	v	language:C	typeref:struct:class
+scull1_dev	scull1.c	/^t_scull1 scull1_dev;$/;"	v	language:C
+scull1_exit	scull1.c	/^module_exit(scull1_exit);$/;"	v	language:C
+scull1_exit	scull1.c	/^void scull1_exit(void)$/;"	f	language:C	signature:(void)
+scull1_fllow	scull1.c	/^t_scull1_qset *scull1_fllow(t_scull1 * scull1_dev,int page_rest)$/;"	f	language:C	signature:(t_scull1 * scull1_dev,int page_rest)
+scull1_fops	scull1.c	/^struct file_operations scull1_fops={$/;"	v	language:C	typeref:struct:file_operations
+scull1_init	scull1.c	/^int scull1_init(void)$/;"	f	language:C	signature:(void)
+scull1_init	scull1.c	/^module_init(scull1_init);$/;"	v	language:C
+scull1_ioctl	scull1.c	/^int scull1_ioctl(struct inode *inode, struct file *filp,unsigned int cmd, unsigned long arg)$/;"	f	language:C	signature:(struct inode *inode, struct file *filp,unsigned int cmd, unsigned long arg)
+scull1_open	scull1.c	/^int scull1_open(struct inode *inode,struct file *filp)$/;"	f	language:C	signature:(struct inode *inode,struct file *filp)
+scull1_qset	scull1.h	/^typedef struct scull1_qset{$/;"	s	language:C++
+scull1_qset::data	scull1.h	/^	void **data;$/;"	m	language:C++	struct:scull1_qset	access:public
+scull1_qset::next	scull1.h	/^	struct scull1_qset *next;$/;"	m	language:C++	struct:scull1_qset	typeref:struct:scull1_qset::scull1_qset	access:public
+scull1_read	scull1.c	/^ssize_t scull1_read(struct file *filp,char __user *buff,size_t count,loff_t *offp)$/;"	f	language:C	signature:(struct file *filp,char __user *buff,size_t count,loff_t *offp)
+scull1_release	scull1.c	/^int scull1_release(struct inode *inode,struct file *filp)$/;"	f	language:C	signature:(struct inode *inode,struct file *filp)
+scull1_trim	scull1.c	/^int scull1_trim(t_scull1 *scull1_dev)$/;"	f	language:C	signature:(t_scull1 *scull1_dev)
+scull1_write	scull1.c	/^ssize_t scull1_write(struct file *filp,const char __user *buff,size_t count,loff_t *offp)$/;"	f	language:C	signature:(struct file *filp,const char __user *buff,size_t count,loff_t *offp)
+sem	scull1.h	/^	struct semaphore sem;$/;"	m	language:C++	struct:scull1	typeref:struct:scull1::semaphore	access:public
+size	scull1.h	/^	unsigned long size;$/;"	m	language:C++	struct:scull1	access:public
+t_scull1	scull1.h	/^} t_scull1;$/;"	t	language:C++	typeref:struct:scull1
+t_scull1_qset	scull1.h	/^} t_scull1_qset;$/;"	t	language:C++	typeref:struct:scull1_qset

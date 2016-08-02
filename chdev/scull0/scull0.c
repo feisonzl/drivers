@@ -79,7 +79,8 @@ t_scull0_qset *scull0_fllow(t_scull0 * scull0_dev,int page_rest)
 	scull0_qset=scull0_dev->data;
 	printk("scull0:%x\n",scull0_qset);
 	if(scull0_qset==NULL){
-		scull0_qset=scull0_dev->data=kmalloc(sizeof(t_scull0_qset),GFP_KERNEL);
+		scull0_qset=scull0_dev->data=kmalloc(sizeof(t_scull0_qset),GFP_KERNEL);//注意指针
+		//scull0_qset=kmalloc(sizeof(t_scull0_qset),GFP_KERNEL);
 		if(scull0_qset==NULL){
 			printk("kmalloc scull0_qset error!\n");
 			return NULL;

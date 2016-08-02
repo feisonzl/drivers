@@ -1,0 +1,2166 @@
+cscope 15 /home/feison/work/study/drivers/chdev/scullp               0000011148
+	@main.c
+
+1 
+	~<°dio.h
+>
+
+2 
+	~<sys/ty≥s.h
+>
+
+3 
+	~<sys/°©.h
+>
+
+4 
+	~<f˙é.h
+>
+
+5 
+	~<uni°d.h
+>
+
+6 
+	~<löux/io˘l.h
+>
+
+8 
+	#DEV_NAME
+ "scuŒ1"
+
+	)
+
+9 
+	#QUANTUM
+ 4000
+
+	)
+
+10 
+	#QSET
+ 1000
+
+	)
+
+12 
+	#SCULL1_IOC_MAGIC
+ 's'
+
+	)
+
+13 
+	#SCULL1_IOCRESET
+ 
+	`_IO
+(
+SCULL1_IOC_MAGIC
+, 0)
+
+	)
+
+23 
+	#SCULL1_IOCSQUANTUM
+ 
+	`_IOW
+(
+SCULL1_IOC_MAGIC
+, 1, )
+
+	)
+
+24 
+	#SCULL1_IOCSQSET
+ 
+	`_IOW
+(
+SCULL1_IOC_MAGIC
+, 2, )
+
+	)
+
+25 
+	#SCULL1_IOCTQUANTUM
+ 
+	`_IO
+(
+SCULL1_IOC_MAGIC
+, 3)
+
+	)
+
+26 
+	#SCULL1_IOCTQSET
+ 
+	`_IO
+(
+SCULL1_IOC_MAGIC
+, 4)
+
+	)
+
+27 
+	#SCULL1_IOCGQUANTUM
+ 
+	`_IOR
+(
+SCULL1_IOC_MAGIC
+, 5, )
+
+	)
+
+28 
+	#SCULL1_IOCGQSET
+ 
+	`_IOR
+(
+SCULL1_IOC_MAGIC
+, 6, )
+
+	)
+
+29 
+	#SCULL1_IOCQQUANTUM
+ 
+	`_IO
+(
+SCULL1_IOC_MAGIC
+, 7)
+
+	)
+
+30 
+	#SCULL1_IOCQQSET
+ 
+	`_IO
+(
+SCULL1_IOC_MAGIC
+, 8)
+
+	)
+
+31 
+	#SCULL1_IOCXQUANTUM
+ 
+	`_IOWR
+(
+SCULL1_IOC_MAGIC
+, 9, )
+
+	)
+
+32 
+	#SCULL1_IOCXQSET
+ 
+	`_IOWR
+(
+SCULL1_IOC_MAGIC
+,10, )
+
+	)
+
+33 
+	#SCULL1_IOCHQUANTUM
+ 
+	`_IO
+(
+SCULL1_IOC_MAGIC
+, 11)
+
+	)
+
+34 
+	#SCULL1_IOCHQSET
+ 
+	`_IO
+(
+SCULL1_IOC_MAGIC
+, 12)
+
+	)
+
+41 
+	#SCULL1_P_IOCTSIZE
+ 
+	`_IO
+(
+SCULL1_IOC_MAGIC
+, 13)
+
+	)
+
+42 
+	#SCULL1_P_IOCQSIZE
+ 
+	`_IO
+(
+SCULL1_IOC_MAGIC
+, 14)
+
+	)
+
+45 
+	#SCULL1_IOC_MAXNR
+ 14
+
+	)
+
+49 
+	$maö
+()
+
+51 
+fd
+,
+ªt
+;
+
+52 
+buf
+[100]={0};
+
+53 
+fd
+ = 
+	`›í
+("/dev/scuŒ1",
+O_RDWR
+);
+
+54 
+ªt
+=
+	`wrôe
+(
+fd
+, "scull1 writeÅest\n",("scull1 writeÅest\n"));
+
+55 
+	`¥ötf
+("wrôê%d ch¨!\n",
+ªt
+);
+
+56 
+ªt
+=
+	`ªad
+(
+fd
+,
+buf
+,10);
+
+57 
+	`¥ötf
+("ªadÅe°:%†ªt:%d\n",
+buf
+,
+ªt
+);
+
+58 
+qu™tum
+;
+
+59 
+	`io˘l
+(
+fd
+,
+SCULL1_IOCSQUANTUM
+,&
+qu™tum
+);
+
+60 
+	`io˘l
+(
+fd
+,
+SCULL1_IOCTQUANTUM
+,
+qu™tum
+);
+
+62 
+	`io˘l
+(
+fd
+,
+SCULL1_IOCGQUANTUM
+,&
+qu™tum
+);
+
+63 
+qu™tum
+=
+	`io˘l
+(
+fd
+,
+SCULL1_IOCQQUANTUM
+);
+
+65 
+	`io˘l
+(
+fd
+,
+SCULL1_IOCXQUANTUM
+,&
+qu™tum
+);
+
+66 
+qu™tum
+=
+	`io˘l
+(
+fd
+,
+SCULL1_IOCHQUANTUM
+,quantum);
+
+68 
+	}
+}
+
+	@scullp.c
+
+2 
+	~<löux/öô.h
+>
+
+3 
+	~<löux/moduÀ.h
+>
+
+4 
+	~<löux/cdev.h
+>
+
+5 
+	~<löux/fs.h
+>
+
+6 
+	~<löux/kî√l.h
+>
+
+7 
+	~<asm/uac˚ss.h
+>
+
+8 
+	~<asm/div64.h
+>
+
+9 
+	~<löux/devi˚.h
+>
+
+10 
+	~<löux/£m≠h‹e.h
+>
+
+11 
+	~<löux/m©h64.h
+>
+
+12 
+	~"scuŒp.h
+"
+
+13 
+	~<löux/sched.h
+>
+
+15 
+dev_t
+ 
+	gdev
+;
+
+16 
+	gªt
+;
+
+18 
+t_scuŒp
+ 
+	gscuŒp_dev
+;
+
+19 
+˛ass
+ *
+	gscuŒp_˛ass
+;
+
+20 
+	$scuŒp_åim
+(
+t_scuŒp
+ *
+scuŒp_dev
+)
+
+22 
+t_scuŒp_q£t
+ *
+√xt
+,*
+d±r
+;
+
+23 
+q£t
+,
+qu™tum
+;
+
+24 
+q£t
+=
+scuŒp_dev
+->qset;
+
+25 
+qu™tum
+=
+scuŒp_dev
+->quantum;
+
+26 
+i
+;
+
+27 
+d±r
+=
+scuŒp_dev
+->
+d©a
+;d±r;d±r=
+√xt
+){
+
+28 if(
+d±r
+->
+d©a
+){
+
+29 
+i
+=0;i<
+q£t
+;i++)
+
+30 
+	`k‰ì
+(
+d±r
+->
+d©a
+[
+i
+]);
+
+32 
+√xt
+=
+d±r
+->next;
+
+33 
+	`k‰ì
+(
+d±r
+->
+d©a
+);
+
+35 
+scuŒp_dev
+->
+d©a
+=
+NULL
+;
+
+36 
+scuŒp_dev
+->
+qu™tum
+=quantum;
+
+37 
+scuŒp_dev
+->
+q£t
+=qset;
+
+38 
+scuŒp_dev
+->
+size
+=0;
+
+40 
+	}
+}
+
+41 
+	$scuŒp_›í
+(
+öode
+ *öode,
+fûe
+ *
+fûp
+)
+
+43 
+t_scuŒp
+ *
+scuŒp_dev
+;
+
+44 
+scuŒp_dev
+=
+	`c⁄èöî_of
+(
+öode
+->
+i_cdev
+,
+t_scuŒp
+,
+cdev
+);
+
+45 
+fûp
+->
+¥iv©e_d©a
+=
+scuŒp_dev
+;
+
+47 if((
+fûp
+->
+f_Êags
+&
+O_ACCMODE
+)==
+O_WRONLY
+){
+
+51 
+	}
+}
+
+52 
+	$scuŒp_ªÀa£
+(
+öode
+ *öode,
+fûe
+ *
+fûp
+)
+
+55 
+	}
+}
+
+56 
+t_scuŒp_q£t
+ *
+	$scuŒp_Êlow
+(
+t_scuŒp
+ * 
+scuŒp_dev
+,
+∑ge_ª°
+)
+
+58 
+tm≤um
+=
+∑ge_ª°
+;
+
+59 
+t_scuŒp_q£t
+ *
+scuŒp_q£t
+=
+NULL
+;
+
+60 if(
+scuŒp_dev
+==
+NULL
+)
+
+61  
+NULL
+;
+
+62 
+scuŒp_q£t
+=
+scuŒp_dev
+->
+d©a
+;
+
+64 if(
+scuŒp_q£t
+==
+NULL
+){
+
+65 
+scuŒp_q£t
+=
+scuŒp_dev
+->
+d©a
+=
+	`kmÆloc
+((
+t_scuŒp_q£t
+),
+GFP_KERNEL
+);
+
+66 if(
+scuŒp_q£t
+==
+NULL
+){
+
+67 
+	`¥ötk
+("kmalloc scullp_qsetÉrror!\n");
+
+68  
+NULL
+;
+
+70 
+	`mem£t
+(
+scuŒp_q£t
+,0,(
+t_scuŒp_q£t
+));
+
+73 
+tm≤um
+--){
+
+74 
+scuŒp_q£t
+=scuŒp_q£t->
+√xt
+;
+
+75 if(
+scuŒp_q£t
+==
+NULL
+)
+
+76 
+scuŒp_q£t
+=
+	`kmÆloc
+((
+t_scuŒp_q£t
+),
+GFP_KERNEL
+);
+
+77 if(
+scuŒp_q£t
+==
+NULL
+){
+
+78 
+	`¥ötk
+("kmalloc scullp_qsetÉrror in while!\n");
+
+79  
+NULL
+;
+
+81 
+	`mem£t
+(
+scuŒp_q£t
+,0,(
+t_scuŒp_q£t
+));
+
+85  
+scuŒp_q£t
+;
+
+87 
+	}
+}
+
+88 
+ssize_t
+ 
+	$scuŒp_ªad
+(
+fûe
+ *
+fûp
+,
+__u£r
+ *
+buff
+,
+size_t
+ 
+cou¡
+,
+loff_t
+ *
+ofÂ
+)
+
+90 
+t_scuŒp
+ *
+scuŒp_dev
+=
+fûp
+->
+¥iv©e_d©a
+;
+
+91 
+t_scuŒp_q£t
+ *
+scuŒp_q£t
+;
+
+93 
+ªt
+=0;
+
+94 
+off
+=*
+ofÂ
+;
+
+96 *
+ofÂ
+=0;
+
+97 
+q£t
+=
+scuŒp_dev
+->qset;
+
+98 
+qu™tum
+=
+scuŒp_dev
+->quantum;
+
+99 
+∑gesize
+=
+q£t
+*
+qu™tum
+;
+
+114 
+∑ge_off
+,
+∑ge_ª°
+,
+£t_off
+,
+£t_ª°
+;
+
+115 
+∑ge_off
+=
+	`div_u64_ªm
+(*
+ofÂ
+,
+∑gesize
+,&
+∑ge_ª°
+);
+
+116 
+£t_off
+=
+	`div_u64_ªm
+(
+∑ge_ª°
+,
+qu™tum
+,&
+£t_ª°
+);
+
+118 if(
+	`down_öãºu±ibÀ
+(&
+scuŒp_dev
+->
+£m
+))
+
+119  -
+ERESTARTSYS
+;
+
+122 if(*
+ofÂ
+ >
+scuŒp_dev
+->
+size
+)
+
+123 
+out
+;
+
+124 if(*
+ofÂ
++
+cou¡
+ >
+scuŒp_dev
+->
+size
+)
+
+125 
+cou¡
+=
+scuŒp_dev
+->
+size
+-*
+ofÂ
+;
+
+128 
+scuŒp_q£t
+=
+	`scuŒp_Êlow
+(
+scuŒp_dev
+,
+∑ge_off
+);
+
+129 if(
+scuŒp_q£t
+==
+NULL
+||!scuŒp_q£t->
+d©a
+||!scuŒp_q£t->d©a[
+£t_off
+]){
+
+130 
+	`¥ötk
+("scullp_qset==NULL||!scullp_qset->data||!scullp_qset->data[set_rest]\n");
+
+131 
+out
+;
+
+136 if(
+cou¡
+>
+scuŒp_dev
+->
+qu™tum
+-
+£t_ª°
+)
+
+137 
+cou¡
+=
+scuŒp_dev
+->
+qu™tum
+-
+£t_ª°
+;
+
+139 if(
+	`c›y_to_u£r
+(
+buff
+,
+scuŒp_q£t
+->
+d©a
+[
+£t_off
+]+
+£t_ª°
+,
+cou¡
+)){
+
+140 
+ªt
+=-
+EFAULT
+;
+
+141 
+out
+;
+
+143 *
+ofÂ
++=
+cou¡
+;
+
+144 
+ªt
+=
+cou¡
+;
+
+146 
+cou¡
+,
+ªt
+,
+£t_ª°
+,
+£t_off
+,
+∑ge_ª°
+,
+scuŒp_dev
+->
+size
+);
+
+150 
+out
+:
+
+151 
+	`up
+(&
+scuŒp_dev
+->
+£m
+);
+
+152  
+ªt
+;
+
+154 
+	}
+}
+
+155 
+ssize_t
+ 
+	$scuŒp_wrôe
+(
+fûe
+ *
+fûp
+,c⁄° 
+__u£r
+ *
+buff
+,
+size_t
+ 
+cou¡
+,
+loff_t
+ *
+ofÂ
+)
+
+157 
+t_scuŒp
+ *
+scuŒp_dev
+=
+fûp
+->
+¥iv©e_d©a
+;
+
+158 
+t_scuŒp_q£t
+ *
+scuŒp_q£t
+;
+
+159 
+ªt
+-
+ENOMEM
+;
+
+160 
+off
+=*
+ofÂ
+;
+
+161 
+q£t
+=
+scuŒp_dev
+->qset;
+
+162 
+qu™tum
+=
+scuŒp_dev
+->quantum;
+
+163 
+∑gesize
+=
+q£t
+*
+qu™tum
+;
+
+164 
+∑ge_ª°
+=
+	`do_div
+(
+off
+,
+∑gesize
+);
+
+165 
+∑ge_off
+=
+off
+;
+
+166 
+£t_ª°
+=
+	`do_div
+(
+∑ge_ª°
+,
+qu™tum
+);
+
+167 
+£t_off
+=
+∑ge_ª°
+;
+
+168 
+buf
+[100]={0};
+
+169 if(
+	`down_öãºu±ibÀ
+(&
+scuŒp_dev
+->
+£m
+))
+
+170  -
+ERESTARTSYS
+;
+
+173 
+scuŒp_q£t
+=
+	`scuŒp_Êlow
+(
+scuŒp_dev
+,
+∑ge_off
+);
+
+174 if(
+scuŒp_q£t
+==
+NULL
+){
+
+175 
+	`¥ötk
+("scullp_qset is NULL!\n");
+
+176 
+out
+;
+
+178 if(!
+scuŒp_q£t
+->
+d©a
+){
+
+179 
+scuŒp_q£t
+->
+d©a
+=
+	`kmÆloc
+(
+q£t
+*(*),
+GFP_KERNEL
+);
+
+180 if(!
+scuŒp_q£t
+->
+d©a
+){
+
+181 
+	`¥ötk
+("scullp_qset->data is NULL!\n");
+
+182 
+out
+;
+
+184 
+	`mem£t
+(
+scuŒp_q£t
+->
+d©a
+,0,
+q£t
+*(*));
+
+186 if(!
+scuŒp_q£t
+->
+d©a
+[
+£t_off
+]){
+
+187 
+scuŒp_q£t
+->
+d©a
+[
+£t_off
+]=
+	`kmÆloc
+(
+qu™tum
+,
+GFP_KERNEL
+);
+
+188 if(!
+scuŒp_q£t
+->
+d©a
+[
+£t_off
+]){
+
+189 
+	`¥ötk
+("scullp_qset->data[set_off] is NULL!\n");
+
+190 
+out
+;
+
+192 
+	`mem£t
+(
+scuŒp_q£t
+->
+d©a
+[
+£t_off
+],0,
+qu™tum
+);
+
+194 
+	`¥ötk
+("cou¡:%d qu™tum:%d së_off:%d së_ª°:%d\n",
+cou¡
+,
+qu™tum
+,
+£t_off
+,
+£t_ª°
+);
+
+195 if(
+cou¡
+>
+qu™tum
+-
+£t_off
+)
+
+196 
+cou¡
+=
+qu™tum
+-
+£t_off
+;
+
+200 if(
+	`c›y_‰om_u£r
+(
+scuŒp_q£t
+->
+d©a
+[
+£t_off
+]+
+£t_ª°
+,
+buff
+,
+cou¡
+)){
+
+201 
+ªt
+=-
+EFAULT
+;
+
+202 
+out
+;
+
+204 
+	`¥ötk
+("%s\n",(*)(
+scuŒp_q£t
+->
+d©a
+[
+£t_ª°
+]+
+£t_off
+));
+
+223 *
+ofÂ
++=
+cou¡
+;
+
+224 if(
+scuŒp_dev
+->
+size
+<*
+ofÂ
+)
+
+225 
+scuŒp_dev
+->
+size
+=*
+ofÂ
+;
+
+226 
+ªt
+=
+cou¡
+;
+
+231 
+out
+:
+
+232 
+	`up
+(&
+scuŒp_dev
+->
+£m
+);
+
+233  
+ªt
+;
+
+235 
+	}
+}
+
+236 
+	$scuŒp_io˘l
+(
+öode
+ *öode, 
+fûe
+ *
+fûp
+,
+cmd
+, 
+¨g
+)
+
+238 
+îr
+=0,
+tmp
+;
+
+239 
+ªt
+=0;
+
+240 
+scuŒp_qu™tum
+=0,
+scuŒp_q£t
+=0;
+
+241 if(
+	`_IOC_TYPE
+(
+cmd
+)!=
+SCULL1_IOC_MAGIC
+Ë -
+ENOTTY
+;
+
+242 if(
+	`_IOC_NR
+(
+cmd
+)>
+SCULL1_IOC_MAXNR
+Ë -
+ENOTTY
+;
+
+244 if(
+	`_IOC_DIR
+(
+cmd
+)&
+_IOC_READ
+)
+
+245 
+îr
+=!
+	`ac˚ss_ok
+(
+VERIFY_WRITE
+,(
+__u£r
+ *)
+¨g
+,
+	`_IOC_SIZE
+(
+cmd
+));
+
+246 if(
+	`_IOC_DIR
+(
+cmd
+)&
+_IOC_WRITE
+)
+
+247 
+îr
+=!
+	`ac˚ss_ok
+(
+VERIFY_READ
+,(
+__u£r
+ *)
+¨g
+,
+	`_IOC_SIZE
+(
+cmd
+));
+
+248 if(
+îr
+)
+
+249  -
+EFAULT
+;
+
+250 
+cmd
+){
+
+251 
+SCULL1_IOCSQUANTUM
+ :
+
+252 if(!
+	`ˇ∑bÀ
+(
+CAP_SYS_ADMIN
+))
+
+253  -
+EPERM
+;
+
+254 
+ªt
+=
+	`__gë_u£r
+(
+scuŒp_qu™tum
+,(
+__u£r
+*)
+¨g
+);
+
+256 
+SCULL1_IOCSQSET
+ :
+
+257 
+scuŒp_qu™tum
+=
+QUANTUM
+;
+
+258 
+scuŒp_q£t
+=
+QSET
+;
+
+260 
+SCULL1_IOCTQUANTUM
+:
+
+261 if(!
+	`ˇ∑bÀ
+(
+CAP_SYS_ADMIN
+))
+
+262  -
+EPERM
+;
+
+263 
+scuŒp_qu™tum
+=
+¨g
+;
+
+265 
+SCULL1_IOCGQUANTUM
+:
+
+266 
+ªt
+=
+	`__put_u£r
+(
+scuŒp_qu™tum
+,(
+__u£r
+ *)
+¨g
+);
+
+268 
+SCULL1_IOCQQUANTUM
+:
+
+269  
+scuŒp_qu™tum
+;
+
+270 
+SCULL1_IOCXQUANTUM
+:
+
+271 if(!
+	`ˇ∑bÀ
+(
+CAP_SYS_ADMIN
+))
+
+272  -
+EPERM
+;
+
+273 
+tmp
+=
+scuŒp_qu™tum
+;
+
+274 
+ªt
+=
+	`__gë_u£r
+(
+scuŒp_qu™tum
+,(
+__u£r
+*)
+¨g
+);
+
+275 if(
+ªt
+==0)
+
+276 
+ªt
+=
+	`__put_u£r
+(
+tmp
+,(
+__u£r
+*)
+¨g
+);
+
+278 
+SCULL1_IOCHQUANTUM
+:
+
+279 if(!
+	`ˇ∑bÀ
+(
+CAP_SYS_ADMIN
+))
+
+280  -
+EPERM
+;
+
+281 
+tmp
+=
+scuŒp_qu™tum
+;
+
+282 
+scuŒp_qu™tum
+=
+¨g
+;
+
+283  
+¨g
+;
+
+285  -
+ENOTTY
+;
+
+288 
+	}
+}
+
+290 
+fûe_›î©i⁄s
+ 
+	gscuŒp_f›s
+={
+
+291 .
+ow√r
+=
+THIS_MODULE
+,
+
+292 .
+	g›í
+=
+scuŒp_›í
+,
+
+293 .
+	gªÀa£
+=
+scuŒp_ªÀa£
+,
+
+294 .
+	gªad
+=
+scuŒp_ªad
+,
+
+295 .
+	gwrôe
+=
+scuŒp_wrôe
+,
+
+296 .
+	gio˘l
+=
+scuŒp_io˘l
+,
+
+298 
+	$scuŒp_öô
+()
+
+303 
+	`£ma_öô
+(&
+scuŒp_dev
+.
+£m
+,1);
+
+306 
+ªt
+=
+	`Æloc_chrdev_ªgi⁄
+(&
+dev
+,0,1,"scullp");
+
+307 if(
+ªt
+!=0){
+
+308 
+	`¥ötk
+("alloc_chrdev_regionÉrror!\n");
+
+309 
+uƒegi°î_dev
+;
+
+311 
+	`cdev_öô
+(&
+scuŒp_dev
+.
+cdev
+,&
+scuŒp_f›s
+);
+
+312 
+scuŒp_dev
+.
+cdev
+.
+ow√r
+=
+THIS_MODULE
+;
+
+313 
+scuŒp_dev
+.
+cdev
+.
+›s
+=&
+scuŒp_f›s
+;
+
+314 
+scuŒp_dev
+.
+qu™tum
+=
+QUANTUM
+;
+
+315 
+scuŒp_dev
+.
+q£t
+=
+QSET
+;
+
+316 
+scuŒp_dev
+.
+size
+=0;
+
+317 
+ªt
+=
+	`cdev_add
+(&
+scuŒp_dev
+.
+cdev
+,
+dev
+,1);
+
+318 if(
+ªt
+!=0){
+
+319 
+	`¥ötk
+("cdev_addÉrror!\n");
+
+320 
+cdev_dñëe
+;
+
+322 
+scuŒp_˛ass
+ = 
+	`˛ass_¸óã
+(
+THIS_MODULE
+,
+DEV_NAME
+);
+
+323 if(
+	`IS_ERR
+(
+scuŒp_˛ass
+)){
+
+324 
+	`¥ötk
+("class createÉrror!\n");
+
+327 
+	`devi˚_¸óã
+(
+scuŒp_˛ass
+,
+NULL
+, 
+dev
+,NULL,
+DEV_NAME
+);
+
+328 
+	`¥ötk
+(
+KERN_ERR
+ "scullp_init\n");
+
+331 
+cdev_dñëe
+:
+
+332 
+	`cdev_dñ
+(&
+scuŒp_dev
+.
+cdev
+);
+
+333 
+uƒegi°î_dev
+:
+
+334 
+	`uƒegi°î_chrdev_ªgi⁄
+(
+	`MINOR
+(
+dev
+),1);
+
+337 
+	}
+}
+
+338 
+	$scuŒp_exô
+()
+
+340 
+	`devi˚_de°roy
+(
+scuŒp_˛ass
+, 
+dev
+);
+
+341 
+	`˛ass_de°roy
+(
+scuŒp_˛ass
+);
+
+342 
+	`uƒegi°î_chrdev_ªgi⁄
+(
+	`MINOR
+(
+dev
+),1);
+
+343 
+	`cdev_dñ
+(&
+scuŒp_dev
+.
+cdev
+);
+
+344 
+	`¥ötk
+(
+KERN_ERR
+ "scullp_exit\n");
+
+346 
+	}
+}
+
+347 
+moduÀ_öô
+(
+scuŒp_öô
+);
+
+348 
+moduÀ_exô
+(
+scuŒp_exô
+);
+
+349 
+MODULE_LICENSE
+ ("Dual BSD/GPL");
+
+	@scullp.h
+
+1 #i‚de‡
+_SCULLP_H_
+
+
+2 
+	#_SCULLP_H_
+
+
+	)
+
+4 
+	#DEV_NAME
+ "scuŒp"
+
+	)
+
+5 
+	#QUANTUM
+ 4000
+
+	)
+
+6 
+	#QSET
+ 1000
+
+	)
+
+8 
+	#SCULLP_IOC_MAGIC
+ 's'
+
+	)
+
+9 
+	#SCULLP_IOCRESET
+ 
+	`_IO
+(
+SCULLP_IOC_MAGIC
+, 0)
+
+	)
+
+19 
+	#SCULLP_IOCSQUANTUM
+ 
+	`_IOW
+(
+SCULLP_IOC_MAGIC
+, 1, )
+
+	)
+
+20 
+	#SCULLP_IOCSQSET
+ 
+	`_IOW
+(
+SCULLP_IOC_MAGIC
+, 2, )
+
+	)
+
+21 
+	#SCULLP_IOCTQUANTUM
+ 
+	`_IO
+(
+SCULLP_IOC_MAGIC
+, 3)
+
+	)
+
+22 
+	#SCULLP_IOCTQSET
+ 
+	`_IO
+(
+SCULLP_IOC_MAGIC
+, 4)
+
+	)
+
+23 
+	#SCULLP_IOCGQUANTUM
+ 
+	`_IOR
+(
+SCULLP_IOC_MAGIC
+, 5, )
+
+	)
+
+24 
+	#SCULLP_IOCGQSET
+ 
+	`_IOR
+(
+SCULLP_IOC_MAGIC
+, 6, )
+
+	)
+
+25 
+	#SCULLP_IOCQQUANTUM
+ 
+	`_IO
+(
+SCULLP_IOC_MAGIC
+, 7)
+
+	)
+
+26 
+	#SCULLP_IOCQQSET
+ 
+	`_IO
+(
+SCULLP_IOC_MAGIC
+, 8)
+
+	)
+
+27 
+	#SCULLP_IOCXQUANTUM
+ 
+	`_IOWR
+(
+SCULLP_IOC_MAGIC
+, 9, )
+
+	)
+
+28 
+	#SCULLP_IOCXQSET
+ 
+	`_IOWR
+(
+SCULLP_IOC_MAGIC
+,10, )
+
+	)
+
+29 
+	#SCULLP_IOCHQUANTUM
+ 
+	`_IO
+(
+SCULLP_IOC_MAGIC
+, 11)
+
+	)
+
+30 
+	#SCULLP_IOCHQSET
+ 
+	`_IO
+(
+SCULLP_IOC_MAGIC
+, 12)
+
+	)
+
+37 
+	#SCULLP_P_IOCTSIZE
+ 
+	`_IO
+(
+SCULLP_IOC_MAGIC
+, 13)
+
+	)
+
+38 
+	#SCULLP_P_IOCQSIZE
+ 
+	`_IO
+(
+SCULLP_IOC_MAGIC
+, 14)
+
+	)
+
+41 
+	#SCULLP_IOC_MAXNR
+ 14
+
+	)
+
+43 
+	sscuŒp_q£t
+{
+
+44 **
+	md©a
+;
+
+45 
+scuŒp_q£t
+ *
+	m√xt
+;
+
+46 } 
+	tt_scuŒp_q£t
+;
+
+47 
+	sscuŒp
+{
+
+48 *
+	mpd©a
+;
+
+49 
+t_scuŒp_q£t
+ *
+	md©a
+;
+
+50 
+	mqu™tum
+;
+
+51 
+	mq£t
+;
+
+52 
+	msize
+;
+
+53 
+	mac˚ss_key
+;
+
+54 
+£m≠h‹e
+ 
+	m£m
+;
+
+55 
+cdev
+ 
+	mcdev
+;
+
+56 } 
+	tt_scuŒp
+;
+
+	@
+1
+.
+0
+3
+25
+main.c
+scullp.c
+scullp.h
