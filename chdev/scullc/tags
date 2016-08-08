@@ -1,0 +1,138 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+DEV_NAME	main.c	8;"	d	language:C	file:
+DEV_NAME	scullc.h	4;"	d	language:C++
+KVERS	Makefile	/^KVERS =$(shell uname -r)$/;"	m	language:Make
+LIST_HEAD	scullc.c	/^static LIST_HEAD(scullc_c_list);$/;"	p	language:C	file:
+PWD	Makefile	/^PWD = $(shell pwd)$/;"	m	language:Make
+QSET	main.c	10;"	d	language:C	file:
+QSET	scullc.h	6;"	d	language:C++
+QUANTUM	main.c	9;"	d	language:C	file:
+QUANTUM	scullc.h	5;"	d	language:C++
+SCULL1_IOCGQSET	main.c	28;"	d	language:C	file:
+SCULL1_IOCGQUANTUM	main.c	27;"	d	language:C	file:
+SCULL1_IOCHQSET	main.c	34;"	d	language:C	file:
+SCULL1_IOCHQUANTUM	main.c	33;"	d	language:C	file:
+SCULL1_IOCQQSET	main.c	30;"	d	language:C	file:
+SCULL1_IOCQQUANTUM	main.c	29;"	d	language:C	file:
+SCULL1_IOCRESET	main.c	13;"	d	language:C	file:
+SCULL1_IOCSQSET	main.c	24;"	d	language:C	file:
+SCULL1_IOCSQUANTUM	main.c	23;"	d	language:C	file:
+SCULL1_IOCTQSET	main.c	26;"	d	language:C	file:
+SCULL1_IOCTQUANTUM	main.c	25;"	d	language:C	file:
+SCULL1_IOCXQSET	main.c	32;"	d	language:C	file:
+SCULL1_IOCXQUANTUM	main.c	31;"	d	language:C	file:
+SCULL1_IOC_MAGIC	main.c	12;"	d	language:C	file:
+SCULL1_IOC_MAXNR	main.c	45;"	d	language:C	file:
+SCULL1_P_IOCQSIZE	main.c	42;"	d	language:C	file:
+SCULL1_P_IOCTSIZE	main.c	41;"	d	language:C	file:
+SCULLC_IOCGQSET	scullc.h	24;"	d	language:C++
+SCULLC_IOCGQUANTUM	scullc.h	23;"	d	language:C++
+SCULLC_IOCHQSET	scullc.h	30;"	d	language:C++
+SCULLC_IOCHQUANTUM	scullc.h	29;"	d	language:C++
+SCULLC_IOCQQSET	scullc.h	26;"	d	language:C++
+SCULLC_IOCQQUANTUM	scullc.h	25;"	d	language:C++
+SCULLC_IOCRESET	scullc.h	9;"	d	language:C++
+SCULLC_IOCSQSET	scullc.h	20;"	d	language:C++
+SCULLC_IOCSQUANTUM	scullc.h	19;"	d	language:C++
+SCULLC_IOCTQSET	scullc.h	22;"	d	language:C++
+SCULLC_IOCTQUANTUM	scullc.h	21;"	d	language:C++
+SCULLC_IOCXQSET	scullc.h	28;"	d	language:C++
+SCULLC_IOCXQUANTUM	scullc.h	27;"	d	language:C++
+SCULLC_IOC_MAGIC	scullc.h	8;"	d	language:C++
+SCULLC_IOC_MAXNR	scullc.h	41;"	d	language:C++
+SCULLC_P_IOCQSIZE	scullc.h	38;"	d	language:C++
+SCULLC_P_IOCTSIZE	scullc.h	37;"	d	language:C++
+_SCULLC_H_	scullc.h	2;"	d	language:C++
+__this_module	scullc.mod.c	/^struct module __this_module$/;"	v	language:C	typeref:struct:module
+__used	scullc.mod.c	/^__used$/;"	v	language:C	file:
+access_key	scullc.h	/^	unsigned int access_key;$/;"	m	language:C++	struct:scullc	access:public
+cdev	scullc.h	/^	struct cdev cdev;$/;"	m	language:C++	struct:scullc	typeref:struct:scullc::cdev	access:public
+data	scullc.h	/^	t_scullc_qset *data;$/;"	m	language:C++	struct:scullc	access:public
+data	scullc.h	/^	void **data;$/;"	m	language:C++	struct:scullc_qset	access:public
+dev	scullc.c	/^static dev_t dev;$/;"	v	language:C	file:
+device	scullc.c	/^	t_scullc *device;$/;"	m	language:C	struct:scullc_x_devinfo	file:	access:public
+device	scullc.c	/^	t_scullc device;$/;"	m	language:C	struct:scullc_listitem	file:	access:public
+fops	scullc.c	/^	struct file_operations *fops;$/;"	m	language:C	struct:scullc_x_devinfo	typeref:struct:scullc_x_devinfo::file_operations	file:	access:public
+key	scullc.c	/^	dev_t key;$/;"	m	language:C	struct:scullc_listitem	file:	access:public
+list	scullc.c	/^	struct list_head list;$/;"	m	language:C	struct:scullc_listitem	typeref:struct:scullc_listitem::list_head	file:	access:public
+main	main.c	/^int main()$/;"	f	language:C
+name	scullc.c	/^	char name[50];$/;"	m	language:C	struct:scullc_x_devinfo	file:	access:public
+next	scullc.h	/^	struct scullc_qset *next;$/;"	m	language:C++	struct:scullc_qset	typeref:struct:scullc_qset::scullc_qset	access:public
+pdata	scullc.h	/^	void *pdata;$/;"	m	language:C++	struct:scullc	access:public
+qset	scullc.h	/^	int qset;$/;"	m	language:C++	struct:scullc	access:public
+quantum	scullc.h	/^	int quantum;$/;"	m	language:C++	struct:scullc	access:public
+ret	scullc.c	/^int ret;$/;"	v	language:C
+scullc	scullc.h	/^typedef struct scullc{$/;"	s	language:C++
+scullc::access_key	scullc.h	/^	unsigned int access_key;$/;"	m	language:C++	struct:scullc	access:public
+scullc::cdev	scullc.h	/^	struct cdev cdev;$/;"	m	language:C++	struct:scullc	typeref:struct:scullc::cdev	access:public
+scullc::data	scullc.h	/^	t_scullc_qset *data;$/;"	m	language:C++	struct:scullc	access:public
+scullc::pdata	scullc.h	/^	void *pdata;$/;"	m	language:C++	struct:scullc	access:public
+scullc::qset	scullc.h	/^	int qset;$/;"	m	language:C++	struct:scullc	access:public
+scullc::quantum	scullc.h	/^	int quantum;$/;"	m	language:C++	struct:scullc	access:public
+scullc::sem	scullc.h	/^	struct semaphore sem;$/;"	m	language:C++	struct:scullc	typeref:struct:scullc::semaphore	access:public
+scullc::size	scullc.h	/^	unsigned long size;$/;"	m	language:C++	struct:scullc	access:public
+scullc_c_device	scullc.c	/^t_scullc scullc_c_device;$/;"	v	language:C
+scullc_c_fops	scullc.c	/^struct file_operations scullc_c_fops={$/;"	v	language:C	typeref:struct:file_operations
+scullc_c_lock	scullc.c	/^static spinlock_t scullc_c_lock=SPIN_LOCK_UNLOCKED;$/;"	v	language:C	file:
+scullc_c_lookfor_device	scullc.c	/^static t_scullc* scullc_c_lookfor_device(dev_t key)$/;"	f	language:C	file:	signature:(dev_t key)
+scullc_c_open	scullc.c	/^static int scullc_c_open(struct inode* inode,struct file* filp)$/;"	f	language:C	file:	signature:(struct inode* inode,struct file* filp)
+scullc_c_release	scullc.c	/^static int scullc_c_release(struct inode * inode ,struct file* filp)$/;"	f	language:C	file:	signature:(struct inode * inode ,struct file* filp)
+scullc_class	scullc.c	/^struct class *scullc_class;$/;"	v	language:C	typeref:struct:class
+scullc_dev	scullc.c	/^t_scullc scullc_dev;$/;"	v	language:C
+scullc_exit	scullc.c	/^module_exit(scullc_exit);$/;"	v	language:C
+scullc_exit	scullc.c	/^void scullc_exit(void)$/;"	f	language:C	signature:(void)
+scullc_fllow	scullc.c	/^t_scullc_qset *scullc_fllow(t_scullc * scullc_dev,int page_rest)$/;"	f	language:C	signature:(t_scullc * scullc_dev,int page_rest)
+scullc_fops	scullc.c	/^struct file_operations scullc_fops={$/;"	v	language:C	typeref:struct:file_operations
+scullc_init	scullc.c	/^int scullc_init(void)$/;"	f	language:C	signature:(void)
+scullc_init	scullc.c	/^module_init(scullc_init);$/;"	v	language:C
+scullc_ioctl	scullc.c	/^int scullc_ioctl(struct inode *inode, struct file *filp,unsigned int cmd, unsigned long arg)$/;"	f	language:C	signature:(struct inode *inode, struct file *filp,unsigned int cmd, unsigned long arg)
+scullc_listitem	scullc.c	/^typedef struct scullc_listitem{$/;"	s	language:C	file:
+scullc_listitem::device	scullc.c	/^	t_scullc device;$/;"	m	language:C	struct:scullc_listitem	file:	access:public
+scullc_listitem::key	scullc.c	/^	dev_t key;$/;"	m	language:C	struct:scullc_listitem	file:	access:public
+scullc_listitem::list	scullc.c	/^	struct list_head list;$/;"	m	language:C	struct:scullc_listitem	typeref:struct:scullc_listitem::list_head	file:	access:public
+scullc_llseek	scullc.c	/^loff_t scullc_llseek(struct file *filp,loff_t off,int whence)$/;"	f	language:C	signature:(struct file *filp,loff_t off,int whence)
+scullc_open	scullc.c	/^int scullc_open(struct inode *inode,struct file *filp)$/;"	f	language:C	signature:(struct inode *inode,struct file *filp)
+scullc_qset	scullc.h	/^typedef struct scullc_qset{$/;"	s	language:C++
+scullc_qset::data	scullc.h	/^	void **data;$/;"	m	language:C++	struct:scullc_qset	access:public
+scullc_qset::next	scullc.h	/^	struct scullc_qset *next;$/;"	m	language:C++	struct:scullc_qset	typeref:struct:scullc_qset::scullc_qset	access:public
+scullc_read	scullc.c	/^ssize_t scullc_read(struct file *filp,char __user *buff,size_t count,loff_t *offp)$/;"	f	language:C	signature:(struct file *filp,char __user *buff,size_t count,loff_t *offp)
+scullc_release	scullc.c	/^int scullc_release(struct inode *inode,struct file *filp)$/;"	f	language:C	signature:(struct inode *inode,struct file *filp)
+scullc_s_available	scullc.c	/^static atomic_t scullc_s_available=ATOMIC_INIT(1);$/;"	v	language:C	file:
+scullc_s_device	scullc.c	/^t_scullc scullc_s_device;$/;"	v	language:C
+scullc_s_fops	scullc.c	/^struct file_operations scullc_s_fops={$/;"	v	language:C	typeref:struct:file_operations
+scullc_s_open	scullc.c	/^static int scullc_s_open(struct inode *inode,struct file *filp)$/;"	f	language:C	file:	signature:(struct inode *inode,struct file *filp)
+scullc_s_release	scullc.c	/^static int scullc_s_release(struct inode *inode,struct file *filp)$/;"	f	language:C	file:	signature:(struct inode *inode,struct file *filp)
+scullc_trim	scullc.c	/^int scullc_trim(t_scullc *scullc_dev)$/;"	f	language:C	signature:(t_scullc *scullc_dev)
+scullc_trim	scullc.c	/^int scullc_trim(t_scullc *scullc_dev);$/;"	p	language:C	file:	signature:(t_scullc *scullc_dev)
+scullc_u_count	scullc.c	/^static int scullc_u_count=0;$/;"	v	language:C	file:
+scullc_u_device	scullc.c	/^t_scullc scullc_u_device;$/;"	v	language:C
+scullc_u_lock	scullc.c	/^static spinlock_t scullc_u_lock=SPIN_LOCK_UNLOCKED;$/;"	v	language:C	file:
+scullc_u_open	scullc.c	/^static int scullc_u_open(struct inode *inode,struct file *filp)$/;"	f	language:C	file:	signature:(struct inode *inode,struct file *filp)
+scullc_u_owner	scullc.c	/^static int scullc_u_owner=0;$/;"	v	language:C	file:
+scullc_u_release	scullc.c	/^static int scullc_u_release(struct inode *inode,struct file *filp)$/;"	f	language:C	file:	signature:(struct inode *inode,struct file *filp)
+scullc_w_available	scullc.c	/^static int scullc_w_available(void)$/;"	f	language:C	file:	signature:(void)
+scullc_w_count	scullc.c	/^static int scullc_w_count=0;$/;"	v	language:C	file:
+scullc_w_device	scullc.c	/^t_scullc scullc_w_device;$/;"	v	language:C	typeref:struct:t_scullc
+scullc_w_fops	scullc.c	/^struct file_operations scullc_w_fops={$/;"	v	language:C	typeref:struct:file_operations
+scullc_w_lock	scullc.c	/^static spinlock_t scullc_w_lock=SPIN_LOCK_UNLOCKED;$/;"	v	language:C	file:
+scullc_w_open	scullc.c	/^static int scullc_w_open(struct inode *inode,struct file *filp)$/;"	f	language:C	file:	signature:(struct inode *inode,struct file *filp)
+scullc_w_owner	scullc.c	/^static int scullc_w_owner=0;$/;"	v	language:C	file:
+scullc_w_release	scullc.c	/^static int scullc_w_release(struct inode *inode,struct file *filp)$/;"	f	language:C	file:	signature:(struct inode *inode,struct file *filp)
+scullc_w_wait	scullc.c	/^DECLARE_WAIT_QUEUE_HEAD(scullc_w_wait);$/;"	v	language:C
+scullc_write	scullc.c	/^ssize_t scullc_write(struct file *filp,const char __user *buff,size_t count,loff_t *offp)$/;"	f	language:C	signature:(struct file *filp,const char __user *buff,size_t count,loff_t *offp)
+scullc_x_devinfo	scullc.c	/^struct scullc_x_devinfo{$/;"	s	language:C	file:
+scullc_x_devinfo::device	scullc.c	/^	t_scullc *device;$/;"	m	language:C	struct:scullc_x_devinfo	file:	access:public
+scullc_x_devinfo::fops	scullc.c	/^	struct file_operations *fops;$/;"	m	language:C	struct:scullc_x_devinfo	typeref:struct:scullc_x_devinfo::file_operations	file:	access:public
+scullc_x_devinfo::name	scullc.c	/^	char name[50];$/;"	m	language:C	struct:scullc_x_devinfo	file:	access:public
+scullc_x_devinfos	scullc.c	/^} scullc_x_devinfos[]={$/;"	v	language:C	typeref:struct:scullc_x_devinfo
+scullc_x_setup	scullc.c	/^int scullc_x_setup(struct scullc_x_devinfo * devinfo)$/;"	f	language:C	signature:(struct scullc_x_devinfo * devinfo)
+sem	scullc.h	/^	struct semaphore sem;$/;"	m	language:C++	struct:scullc	typeref:struct:scullc::semaphore	access:public
+size	scullc.h	/^	unsigned long size;$/;"	m	language:C++	struct:scullc	access:public
+t_scullc	scullc.h	/^} t_scullc;$/;"	t	language:C++	typeref:struct:scullc
+t_scullc_listitem	scullc.c	/^} t_scullc_listitem;$/;"	t	language:C	typeref:struct:scullc_listitem	file:
+t_scullc_qset	scullc.h	/^} t_scullc_qset;$/;"	t	language:C++	typeref:struct:scullc_qset

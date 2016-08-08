@@ -251,12 +251,34 @@ out:
 	return ret;
 	
 }
+loff_t scull0_llseek(struct file* filp,loff_t off,int whence)
+{
+	t_scull0 *dev=filp->private_data;
+	loff_t newpos;
+	switch(whence){
+		case 0://SEEK_SET
+			newpos=off;
+			break;
+		case 1://SEEK_CUR
+			newpos=filp->f_pos+off;
+			break;
+		case 2://SEEK_END
+			newpos=dev->size+off;
+			break;
+		default:
+			return -EINVAL;
+	}
+	if(newpos<0) 	return -EINVAL;
+	filp->f_pos=newpos;
+	return newpos;
+}
 struct file_operations scull0_fops={
 	.owner=THIS_MODULE,
 	.open=scull0_open,
 	.release=scull0_release,
 	.read=scull0_read,
 	.write=scull0_write,
+	.llseek=scull0_llseek,
 };
 int scull0_init(void)
 {	

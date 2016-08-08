@@ -1,0 +1,52 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+DEV_NAME	scull0.c	13;"	d	language:C	file:
+KVERS	Makefile	/^KVERS =$(shell uname -r)$/;"	m	language:Make
+PWD	Makefile	/^PWD = $(shell pwd)$/;"	m	language:Make
+QSET	scull0.c	15;"	d	language:C	file:
+QUANTUM	scull0.c	14;"	d	language:C	file:
+access_key	scull0.c	/^	unsigned int access_key;$/;"	m	language:C	struct:sucll0	file:	access:public
+cdev	scull0.c	/^	struct cdev cdev;$/;"	m	language:C	struct:sucll0	typeref:struct:sucll0::cdev	file:	access:public
+data	scull0.c	/^	t_scull0_qset *data;$/;"	m	language:C	struct:sucll0	file:	access:public
+data	scull0.c	/^	void **data;$/;"	m	language:C	struct:scull0_qset	file:	access:public
+dev	scull0.c	/^static dev_t dev;$/;"	v	language:C	file:
+main	main.c	/^int main()$/;"	f	language:C
+next	scull0.c	/^	struct sucll0_qset *next;$/;"	m	language:C	struct:scull0_qset	typeref:struct:scull0_qset::sucll0_qset	file:	access:public
+pdata	scull0.c	/^	void *pdata;$/;"	m	language:C	struct:sucll0	file:	access:public
+qset	scull0.c	/^	int qset;$/;"	m	language:C	struct:sucll0	file:	access:public
+quantum	scull0.c	/^	int quantum;$/;"	m	language:C	struct:sucll0	file:	access:public
+ret	scull0.c	/^int ret;$/;"	v	language:C
+scull0_class	scull0.c	/^struct class *scull0_class;$/;"	v	language:C	typeref:struct:class
+scull0_dev	scull0.c	/^t_scull0 scull0_dev;$/;"	v	language:C
+scull0_exit	scull0.c	/^module_exit(scull0_exit);$/;"	v	language:C
+scull0_exit	scull0.c	/^void scull0_exit(void)$/;"	f	language:C	signature:(void)
+scull0_fllow	scull0.c	/^t_scull0_qset *scull0_fllow(t_scull0 * scull0_dev,int page_rest)$/;"	f	language:C	signature:(t_scull0 * scull0_dev,int page_rest)
+scull0_fops	scull0.c	/^struct file_operations scull0_fops={$/;"	v	language:C	typeref:struct:file_operations
+scull0_init	scull0.c	/^int scull0_init(void)$/;"	f	language:C	signature:(void)
+scull0_init	scull0.c	/^module_init(scull0_init);$/;"	v	language:C
+scull0_llseek	scull0.c	/^loff_t scull0_llseek(struct file* filp,loff_t off,int whence)$/;"	f	language:C	signature:(struct file* filp,loff_t off,int whence)
+scull0_open	scull0.c	/^int scull0_open(struct inode *inode,struct file *filp)$/;"	f	language:C	signature:(struct inode *inode,struct file *filp)
+scull0_qset	scull0.c	/^typedef struct scull0_qset{$/;"	s	language:C	file:
+scull0_qset::data	scull0.c	/^	void **data;$/;"	m	language:C	struct:scull0_qset	file:	access:public
+scull0_qset::next	scull0.c	/^	struct sucll0_qset *next;$/;"	m	language:C	struct:scull0_qset	typeref:struct:scull0_qset::sucll0_qset	file:	access:public
+scull0_read	scull0.c	/^ssize_t scull0_read(struct file *filp,char __user *buff,size_t count,loff_t *offp)$/;"	f	language:C	signature:(struct file *filp,char __user *buff,size_t count,loff_t *offp)
+scull0_release	scull0.c	/^int scull0_release(struct inode *inode,struct file *filp)$/;"	f	language:C	signature:(struct inode *inode,struct file *filp)
+scull0_trim	scull0.c	/^int scull0_trim(t_scull0 *scull0_dev)$/;"	f	language:C	signature:(t_scull0 *scull0_dev)
+scull0_write	scull0.c	/^ssize_t scull0_write(struct file *filp,const char __user *buff,size_t count,loff_t *offp)$/;"	f	language:C	signature:(struct file *filp,const char __user *buff,size_t count,loff_t *offp)
+sem	scull0.c	/^	struct semaphore sem;$/;"	m	language:C	struct:sucll0	typeref:struct:sucll0::semaphore	file:	access:public
+size	scull0.c	/^	unsigned long size;$/;"	m	language:C	struct:sucll0	file:	access:public
+sucll0	scull0.c	/^typedef struct sucll0{$/;"	s	language:C	file:
+sucll0::access_key	scull0.c	/^	unsigned int access_key;$/;"	m	language:C	struct:sucll0	file:	access:public
+sucll0::cdev	scull0.c	/^	struct cdev cdev;$/;"	m	language:C	struct:sucll0	typeref:struct:sucll0::cdev	file:	access:public
+sucll0::data	scull0.c	/^	t_scull0_qset *data;$/;"	m	language:C	struct:sucll0	file:	access:public
+sucll0::pdata	scull0.c	/^	void *pdata;$/;"	m	language:C	struct:sucll0	file:	access:public
+sucll0::qset	scull0.c	/^	int qset;$/;"	m	language:C	struct:sucll0	file:	access:public
+sucll0::quantum	scull0.c	/^	int quantum;$/;"	m	language:C	struct:sucll0	file:	access:public
+sucll0::sem	scull0.c	/^	struct semaphore sem;$/;"	m	language:C	struct:sucll0	typeref:struct:sucll0::semaphore	file:	access:public
+sucll0::size	scull0.c	/^	unsigned long size;$/;"	m	language:C	struct:sucll0	file:	access:public
+t_scull0	scull0.c	/^} t_scull0;$/;"	t	language:C	typeref:struct:sucll0	file:
+t_scull0_qset	scull0.c	/^} t_scull0_qset;$/;"	t	language:C	typeref:struct:scull0_qset	file:

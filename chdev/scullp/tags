@@ -4,56 +4,59 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-DEV_NAME	main.c	8;"	d	language:C	file:
+DEV_NAME	main.c	10;"	d	language:C	file:
 DEV_NAME	scullp.h	6;"	d	language:C++
 KVERS	Makefile	/^KVERS =$(shell uname -r)$/;"	m	language:Make
 PWD	Makefile	/^PWD = $(shell pwd)$/;"	m	language:Make
-QSET	main.c	10;"	d	language:C	file:
+QSET	main.c	12;"	d	language:C	file:
 QSET	scullp.h	8;"	d	language:C++
-QUANTUM	main.c	9;"	d	language:C	file:
+QUANTUM	main.c	11;"	d	language:C	file:
 QUANTUM	scullp.h	7;"	d	language:C++
-SCULLP_IOCGQSET	main.c	28;"	d	language:C	file:
+SCULLP_BUFFERSIZE	scullp.c	17;"	d	language:C	file:
+SCULLP_IOCGQSET	main.c	30;"	d	language:C	file:
 SCULLP_IOCGQSET	scullp.h	26;"	d	language:C++
-SCULLP_IOCGQUANTUM	main.c	27;"	d	language:C	file:
+SCULLP_IOCGQUANTUM	main.c	29;"	d	language:C	file:
 SCULLP_IOCGQUANTUM	scullp.h	25;"	d	language:C++
-SCULLP_IOCHQSET	main.c	34;"	d	language:C	file:
+SCULLP_IOCHQSET	main.c	36;"	d	language:C	file:
 SCULLP_IOCHQSET	scullp.h	32;"	d	language:C++
-SCULLP_IOCHQUANTUM	main.c	33;"	d	language:C	file:
+SCULLP_IOCHQUANTUM	main.c	35;"	d	language:C	file:
 SCULLP_IOCHQUANTUM	scullp.h	31;"	d	language:C++
-SCULLP_IOCQQSET	main.c	30;"	d	language:C	file:
+SCULLP_IOCQQSET	main.c	32;"	d	language:C	file:
 SCULLP_IOCQQSET	scullp.h	28;"	d	language:C++
-SCULLP_IOCQQUANTUM	main.c	29;"	d	language:C	file:
+SCULLP_IOCQQUANTUM	main.c	31;"	d	language:C	file:
 SCULLP_IOCQQUANTUM	scullp.h	27;"	d	language:C++
-SCULLP_IOCRESET	main.c	13;"	d	language:C	file:
+SCULLP_IOCRESET	main.c	15;"	d	language:C	file:
 SCULLP_IOCRESET	scullp.h	11;"	d	language:C++
-SCULLP_IOCSQSET	main.c	24;"	d	language:C	file:
+SCULLP_IOCSQSET	main.c	26;"	d	language:C	file:
 SCULLP_IOCSQSET	scullp.h	22;"	d	language:C++
-SCULLP_IOCSQUANTUM	main.c	23;"	d	language:C	file:
+SCULLP_IOCSQUANTUM	main.c	25;"	d	language:C	file:
 SCULLP_IOCSQUANTUM	scullp.h	21;"	d	language:C++
-SCULLP_IOCTQSET	main.c	26;"	d	language:C	file:
+SCULLP_IOCTQSET	main.c	28;"	d	language:C	file:
 SCULLP_IOCTQSET	scullp.h	24;"	d	language:C++
-SCULLP_IOCTQUANTUM	main.c	25;"	d	language:C	file:
+SCULLP_IOCTQUANTUM	main.c	27;"	d	language:C	file:
 SCULLP_IOCTQUANTUM	scullp.h	23;"	d	language:C++
-SCULLP_IOCXQSET	main.c	32;"	d	language:C	file:
+SCULLP_IOCXQSET	main.c	34;"	d	language:C	file:
 SCULLP_IOCXQSET	scullp.h	30;"	d	language:C++
-SCULLP_IOCXQUANTUM	main.c	31;"	d	language:C	file:
+SCULLP_IOCXQUANTUM	main.c	33;"	d	language:C	file:
 SCULLP_IOCXQUANTUM	scullp.h	29;"	d	language:C++
-SCULLP_IOC_MAGIC	main.c	12;"	d	language:C	file:
+SCULLP_IOC_MAGIC	main.c	14;"	d	language:C	file:
 SCULLP_IOC_MAGIC	scullp.h	10;"	d	language:C++
-SCULLP_IOC_MAXNR	main.c	45;"	d	language:C	file:
+SCULLP_IOC_MAXNR	main.c	47;"	d	language:C	file:
 SCULLP_IOC_MAXNR	scullp.h	43;"	d	language:C++
-SCULLP_P_IOCQSIZE	main.c	42;"	d	language:C	file:
+SCULLP_P_IOCQSIZE	main.c	44;"	d	language:C	file:
 SCULLP_P_IOCQSIZE	scullp.h	40;"	d	language:C++
-SCULLP_P_IOCTSIZE	main.c	41;"	d	language:C	file:
+SCULLP_P_IOCTSIZE	main.c	43;"	d	language:C	file:
 SCULLP_P_IOCTSIZE	scullp.h	39;"	d	language:C++
 _SCULLP_H_	scullp.h	2;"	d	language:C++
+__this_module	scullp.mod.c	/^struct module __this_module$/;"	v	language:C	typeref:struct:module
+__used	scullp.mod.c	/^__used$/;"	v	language:C	file:
 async_queue	scullp.h	/^	struct fasync_struct *async_queue;$/;"	m	language:C++	struct:scullp	typeref:struct:scullp::fasync_struct	access:public
 buffer	scullp.h	/^	char *buffer,*end;$/;"	m	language:C++	struct:scullp	access:public
 buffersize	scullp.h	/^	int buffersize;$/;"	m	language:C++	struct:scullp	access:public
 cdev	scullp.h	/^	struct cdev cdev;$/;"	m	language:C++	struct:scullp	typeref:struct:scullp::cdev	access:public
 dev	scullp.c	/^static dev_t dev;$/;"	v	language:C	file:
 end	scullp.h	/^	char *buffer,*end;$/;"	m	language:C++	struct:scullp	access:public
-main	main.c	/^int main(int argc;char **argv)$/;"	f	language:C	signature:(int argc;char **argv)
+main	main.c	/^int main(int argc,char **argv)$/;"	f	language:C	signature:(int argc,char **argv)
 nreaders	scullp.h	/^	int nreaders,nwriters;$/;"	m	language:C++	struct:scullp	access:public
 nwriters	scullp.h	/^	int nreaders,nwriters;$/;"	m	language:C++	struct:scullp	access:public
 readq	scullp.h	/^	wait_queue_head_t readq,writeq;$/;"	m	language:C++	struct:scullp	access:public
@@ -76,11 +79,13 @@ scullp_class	scullp.c	/^struct class *scullp_class;$/;"	v	language:C	typeref:str
 scullp_dev	scullp.c	/^t_scullp scullp_dev;$/;"	v	language:C
 scullp_exit	scullp.c	/^module_exit(scullp_exit);$/;"	v	language:C
 scullp_exit	scullp.c	/^void scullp_exit(void)$/;"	f	language:C	signature:(void)
+scullp_fasync	scullp.c	/^int scullp_fasync(int fd,struct file *filp,int mode)$/;"	f	language:C	signature:(int fd,struct file *filp,int mode)
 scullp_fops	scullp.c	/^struct file_operations scullp_fops={$/;"	v	language:C	typeref:struct:file_operations
 scullp_getwritespace	scullp.c	/^int scullp_getwritespace(t_scullp *dev,struct file *filp)$/;"	f	language:C	signature:(t_scullp *dev,struct file *filp)
 scullp_init	scullp.c	/^int scullp_init(void)$/;"	f	language:C	signature:(void)
 scullp_init	scullp.c	/^module_init(scullp_init);$/;"	v	language:C
 scullp_open	scullp.c	/^int scullp_open(struct inode *inode,struct file *filp)$/;"	f	language:C	signature:(struct inode *inode,struct file *filp)
+scullp_poll	scullp.c	/^unsigned int scullp_poll(struct file *filp,poll_table *wait)$/;"	f	language:C	signature:(struct file *filp,poll_table *wait)
 scullp_read	scullp.c	/^ssize_t scullp_read(struct file *filp,char __user *buff,size_t count,loff_t *offp)$/;"	f	language:C	signature:(struct file *filp,char __user *buff,size_t count,loff_t *offp)
 scullp_release	scullp.c	/^int scullp_release(struct inode *inode,struct file *filp)$/;"	f	language:C	signature:(struct inode *inode,struct file *filp)
 scullp_spacefree	scullp.c	/^int scullp_spacefree(t_scullp *dev)$/;"	f	language:C	signature:(t_scullp *dev)

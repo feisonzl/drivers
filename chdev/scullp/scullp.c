@@ -171,6 +171,8 @@ struct file_operations scullp_fops={
 	.release=scullp_release,
 	.read=scullp_read,
 	.write=scullp_write,
+	.poll=scullp_poll,
+	.fasync=scullp_fasync,
 };
 int scullp_init(void)
 {	

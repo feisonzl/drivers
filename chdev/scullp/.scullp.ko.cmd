@@ -1,0 +1,1 @@
+cmd_/home/feison/work/study/drivers/chdev/scullp/scullp.ko := ld -r -m elf_i386  --build-id -o /home/feison/work/study/drivers/chdev/scullp/scullp.ko /home/feison/work/study/drivers/chdev/scullp/scullp.o /home/feison/work/study/drivers/chdev/scullp/scullp.mod.o
